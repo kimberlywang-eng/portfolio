@@ -1,3 +1,21 @@
+<?php
+
+
+if($_POST["message"]) {
+
+
+mail("your@email.address", "Here is the subject line",
+
+
+$_POST["insert your message here"]. "From: an@email.address");
+
+
+}
+
+
+?>
+
+
 <!DOCTYPE HTML>
 <!--
 	Massively by HTML5 UP
@@ -69,7 +87,7 @@
 													<td>Winter 2022-Present</td>
 													<td>2021 F1 Car</td>
 													<td>SolidWorks</td>
-													<td>Coming Soon</td>
+													<td><a href="projects - F1 Car.html">Click Here</a></td>
 												</tr>
 												<tr>
 													<td>Fall 2021-Present</td>
@@ -118,16 +136,22 @@
 											</thead>
 											<tbody>
 												<tr>
+													<td>April 2022</td>
+													<td>Vima</td>
+													<td>React Native</td>
+													<td><a href="projects - Vima.html">Click Here</a></td>
+												</tr>
+												<tr>
 													<td>Fall 2021</td>												
 													<td>Calendar App</td>
 													<td>Python</td>
-													<td>Coming Soon</td>
+													<td><a href="projects - CalendarApp.html">Click Here</a></td>
 												</tr>
 												<tr>
 													<td>Fall 2021-Spring 2022</td>
-													<td>Vertical Suspension for <a href="https://www.guadaloop.com/">Texas Guadaloop</a></td>
+													<td>Lateral Suspension for <a href="https://www.guadaloop.com/">Texas Guadaloop</a></td>
 													<td>SolidWorks</td>
-													<td>Coming Soon</td>
+													<td><a href="projects - Suspension.html">Click Here</a></td>
 												</tr>
 												<!-- <tr>
 													<td>Item 3</td>
@@ -160,36 +184,53 @@
 								<!-- Form -->
 									<h2>Form</h2>
 
-									<form method="post" action="#">
+									<!-- <form method="post" action="https://kimberlywang-eng.github.io/portfolio/projects.php"> -->
+									<form action="https://formsubmit.co/185cb31bdd7d0e393c3ec5bffeccdc9c" method="POST">
+										<!-- Honeypot -->
+										<input type="text" name="_honey" style="display:none">
+
+										<!-- Disable Captcha -->
+										<input type="hidden" name="_captcha" value="false">
+
+										<!-- Success Message Link -->
+										<input type="hidden" name="_next" value="https://kimberlywang-eng.github.io/portfolio/success.html">
+
+										<!-- Subject Line -->
+										<input type="hidden" name="_subject" value="Kimberly Portfolio's New submission!">
+
+										<!-- <input type="hidden" name="_autoresponse" value="Your message was received and
+												below is a copy of your response. I will get back to you soon and thank you for visiting the page today."> -->
+
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+												<input type="text" name="Name" id="demo-name" value="" placeholder="Name" required/>
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+												<input type="email" name="Email" id="demo-email" value="" placeholder="Email" required/>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
-												<select name="demo-category" id="demo-category">
+												<select name="Reason" id="demo-category">
 													<option value="">- Reason for Use of Project -</option>
-													<option value="1">Personal</option>
-													<option value="1">School</option>
-													<option value="1">Business</option>
+													<option value="Personal">Personal</option>
+													<option value="School">School</option>
+													<option value="Business">Business</option>
 													<!-- <option value="1">Human Resources</option> -->
 												</select>
 											</div>
 											<!-- Break -->
 											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<input type="checkbox" id="demo-copy" name="Copy">
+												
 												<label for="demo-copy">Email me a copy</label>
 											</div>
 											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<input type="checkbox" id="demo-human" name="I&nbsp;am&nbsp;a&nbsp;human" checked>
 												<label for="demo-human">I am a human</label>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+												<textarea name="Message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
@@ -277,4 +318,7 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
+
+	
 </html>

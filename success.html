@@ -1,3 +1,21 @@
+<?php
+
+
+if($_POST["message"]) {
+
+
+mail("your@email.address", "Here is the subject line",
+
+
+$_POST["insert your message here"]. "From: an@email.address");
+
+
+}
+
+
+?>
+
+
 <!DOCTYPE HTML>
 <!--
 	Massively by HTML5 UP
@@ -6,7 +24,7 @@
 -->
 <html>
 	<head>
-		<title>Blogs - Kimberly Wang's Portfolio</title>
+		<title>Projects Page - Kimberly Wang's Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,16 +37,13 @@
 
 				<!-- Header -->
 					<header id="header">
-					</li><p><a href="index.html" class="logo">Home Page</a></li>   
-					</li><a href="blogs.html" class="logo">Blogs Page</a></p></li>
+						<a href="index.html" class="logo">Home Page</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<!-- <li><a href="index.html">This is Massively</a></li>
-							<li class="active"><a href="blogs.html">Generic Page</a></li>
-							<li><a href="projects.html">Elements Reference</a></li> -->
+							<!-- <li><a href="index.html">Home Page</a></li> -->
 							<li><a href="blogs.html">Blogs</a></li>
 							<li class="active"><a href="projects.html">Projects</a></li>
 						</ul>
@@ -46,20 +61,19 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">May 14, 2021</span>
-									<h1>Summer Full of Adventures<br />
+									<h1>Thank You<br />
 									</h1>
-									<p>The Summer of 2021. I got my first jobs ever as an undergraduate teaching assistant for my favorite class ever in the Department of Information, Risk, and Operations Management (IROM) in the University of Texas at Austin!</p>
 								</header>
-								<div class="image main"><img src="images/TAposition.jpg" alt="" /></div>
-								<p>My first job ended up being my  favorite class that I ever taken in my schooling career. As a student, I believe we never truly understand until you actual do it! The TA position was a similar case as I gain an understanding of what it takes to run a class of 600+ students.</p>
-								</p>I thought understanding and knowing the information was important from case studies of Fortune 500 companies and many more along with excel skills to VLOOKUP and Logistical Functions that I will later use in my CS303E class the next semester although a little different.</p>
-								</p>There was also customer service, "people skills", and professionism that I learned when students are upset about their grades to guide them in finding alternative solutions by analyizing what they could have done differently to succeed. </p>
-								</p>Futhermore, add the TA job along with my academics in Fall 2020 and a Sanger Tutor for the unversity proved to be quiet interesting and tested my time management skills in a new environment attending in-person classes at UT. Since, it was my second semester as a TA, I also gained more responsibilities to write quizzes, and maintain office hours.
-								 Nevertheless, I am happy and glad that I decided to challenge myself.</p>
-.							</section>
+
+									<hr />
+										<p>Your message was received. A copy of your response will be sent to you within the upcoming days, if selected.
+											I will get back to you soon and thank you for visiting the page today.</p>
+									<hr />
+
+							</section>
 
 					</div>
+					
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -127,4 +141,7 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
+
+	
 </html>
