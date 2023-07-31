@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects Page - Kimberly Wang's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo">Home Page</a>
+				</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<!-- <li><a href="index.html">Home Page</a></li> -->
+							<li><a href="blogs.html">Blogs</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+							<li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<!-- <li><a href="#" class="icon brands fa-gmail"><span class="label">gmail</span></a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>3D Model Design Process<br />
+									</h1>
+								</header>
+								
+									<hr />
+									<header class="major">
+										<span class="date">March 21, 2023
+											<p><center>Updated: March 21, 2023</center></p>
+										</span>
+									</header>
+								<!-- Blockquote -->
+									<h2>Purpose</h2>
+									<blockquote>Allow the user to change the shape size using Three.js as the backend of the shape and the size differences to be changed and inputted.
+									</blockquote>
+									
+									<hr />
+								<!-- Box -->
+								<h2>Design Process</h2>
+								<div class="box">
+									<p>During my internship at Tesla, one of my coworkers proposed the idea of adding 3D modelling into my website. Although, 
+										it was hard at the beginning because I was balancing work, research, and Texas Guadaloop during the day, I finally got the 
+										chance to do it during Spring Break. Here is the product:
+										<a href="projects - 3D Model.html">click here.</a>
+									</p>
+									
+									<h3>Overview Process</h3>
+									<p>
+									<p><center>Goal: Input a 3D model into the website</center></p>
+											<ol>
+												<span class="image right"><img src="images/baymax-code.jpg" alt="" /></span>
+												<li>Learn about three.js from its animation and the backend of pushing the code for UI (user-interface) could see the animation.</li>
+												<li>Get a free 3D model to apply knowledge</li>
+												<li>Put 3D model on website</li>
+												<li>Animate the 3D model on the website</li>
+											</ol>
+									</p>	
+									<h3>Knowledge/Research (Started: March 21, 2023)</h3>
+										<h5>Day 1</h5>
+										<ul>
+										<li>Applied three.js by adding NPM (Node Package Manager) by installing node.js</li>
+										<li>**Note: Remember to restart Visual Studio Code after installing node.js (or the code won't work).</li>
+										</ul>
+										<h5>Challenges: Day 1</h5>
+										<ul>
+										<li>Three.js wasn't reading.</li>
+										<p>&nbsp The code wasn't loading when the code was using <code>script</code> command. I tried to debug and noticed the code wasn't going 
+											through the command. The website had a black placeholder for where the animation was located. I tried to adjust the light/camera, but that didn't work.</p>
+										</ul>
+									<h3>Applied Knowledge (Started: June 12-13, 2023)</h3>
+										<h5>Day 2</h5>
+											<ul>
+												<span class="image  right"><img src="images/wall-e proto.jpg" alt="" /></span>
+												<li>Researched other ways to implement a 3D model into the website: <code>model-viewer</code></li>
+												<li>Find a .glb 3D model file or convert a file to a .glb and was free for the public</li>
+												<p>&nbsp Later, I found a Baymax as a .glb file, but that didn't work as the .obj wasn't a smooth surfaces and had additional subfolders for its skin. I had converted a Wall-E that was 
+													a .rar file, but later found a .glb file of Wall-E. The Wall-E was there, but it didn't work as it was too big of a file for the website to be converted. I used a smaller Wall-E file for it to work.</p>
+											</ul>
+										
+										<h5>Challenges: Day 2</h5>
+											<ul>
+												<li><code>model-viewer</code> only supported .glb files</li>
+												<li>Baymax had too many subfolders for website to output the correct look for Baymax.</li>
+												<li>File size for Wall-E</li>
+											</ul>
+										<p><center>The Wall-E was my first animation on this website that worked!</center></p>
+										<h5>Day 3 (LET'S ANIMATE!)</h5>
+											<span class="image left"><img src="images/mixamo_skeleton.png" alt="" /></span>
+											<p>Thoughts: I wanted to then make the 3D model as animated like three.js model. After, some searching on Google and three.js, I found that I can use model-viewer to animate a 3D Model on the website</p>
+											<ul>
+												<li>Researched how to animate in <code>model-viewer</code></li>
+												<li>Figured out: an animation software Mixamo to animate 3D models.</li>
+												<p> &nbsp I want to try Mixamo but the files import wasn't the correct type, too big, or couldn't find the skeleton for the 3D model. 
+													The control the .glb files to Mixamo and export it as a .glb. Mixamo only accepts .fbx, .obj, and .zip, so I would have to convert to a .glb for <code>model-viewer</code>
+												</p>
+												<li>Found a website with a 3D dinosaur model animation</li>
+												<span class="image right"><img src="images/mixamo_baymax.png" alt="" /></span>
+												<li>UI to have a boarder (later didn't like it) and added buttons by combining logic in <code>model-viewer</code> from the three.js website and 
+													examples in the documentation of the <code>model-viewer</code> and three.js websites.</li>
+													<p> &nbsp The user can control the dinosaur's animation. I also want to slider to used as a speed and button of types of animations.</p>
+											</ul>
+										<h5>Challenges: Day 3</h5>
+											<ul>
+												<li><code>model-viewer</code> can animate if the .glb file and 3D model already have an animation already in the file. Solution: Mixamo</li>
+											</ul>
+											<body>
+												<center>
+											<video width="750" height="450" controls>
+												<source src="mixamo_baymax.mp4" type="video/mp4">
+												Your browser does not support the video tag.
+											</video>
+												</center>
+											</body>											
+											
+									<br>
+									<!-- <h3>Manufacturing:</h3>
+											<ul>
+												<p><span class="image right"><img src="images/Joystick.jpg" alt="" /></span>
+												<li>Coming Soon</li>
+											</ul>
+									<p><span class="image left"><img src="images/FinalProduct - TransparentTop.jpg" alt="" /></span> -->
+									
+									<h3>Skills Learned</h3>
+											<ul>
+												<li><code>model-viewer</code> and three.js</li>
+												<li>3D model in websites</li>
+												<li>Animating 3D model for UI</li>
+											</ul>
+									<h3>Improvements and Challenges</h3>
+											<ul>
+												<li>Animate and input my own 3D model</li>
+												<li>Apply the dinosaur's skin. The dinosaur has a skin color, but somehow the skin isn't showing up. The texture is shown, but not the skin.</li>
+												<li>Allow the slider to have more drastic changes in speed of the dinosaur's animation</li>
+											</ul>		
+									<h3>Overall Thoughts</h3>
+										<p>I always love to create, explore, and innovate on designs and especially 3D designs. It was amazing to find out and apply these 3D models into code after 
+											one of my coworkers at Tesla suggested it. I think that the three.js isn't working because other .js files in the html code that overrides 
+											the three.js inputting the animation into the website. It was cool to see inspiration from three.js and <code>model-viewer</code> website and apply those 
+											examples into the code and see my imagination come to life on the website. From my internship with Tesla, I learned to take big projects like this one and break
+											it down to smaller steps. Day 1 and 2: I wanted to just apply a simple 3D model like Wall-E without animations to see if it worked. Day 3: I wanted to take it a 
+											step further after I saw the 3D model working with inputting animations. 											
+										</p>
+										<p><center>Moral of the story: “Thank you, coffeee and sleep and the internet and hope to further improve the website.” </center></p>
+									
+								</div>
+
+					</div>
+					
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!-- <section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section> -->
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p><br />
+								Austin, TX</p>
+							</section>
+							<!-- <section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section> -->
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">kimberly.wang@utexas.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+									<li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+									<!-- <li><a href="#" class="icon brands fa-gmail"><span class="label">gmail</span></a></li> -->
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<!-- <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul> -->
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

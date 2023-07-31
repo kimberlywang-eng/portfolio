@@ -2338,6 +2338,16 @@ body.is-preload #banner:after {
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
+	
+	.slider-icon {
+		display: inline-block;
+		width: 250px;
+		height: 8px;
+		background-color: #212931;
+		border-radius: 5px;
+		
+	  }
+
 	button,
 	.button {
 		-moz-appearance: none;

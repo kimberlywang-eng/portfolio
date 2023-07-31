@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Projects Page - Kimberly Wang's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Home Page</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="blogs.html">Blogs</a></li>
+                <li class="active"><a href="projects.html">Projects</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/"
+                        class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h1>3D Model</h1>
+                </header>
+                <hr />
+                <header class="major">
+                    <span class="date">March 21, 2023
+                        <p>
+                            <center>Update1: March 21, 2023</center>
+							<center>Update2: June 12-13, 2023</center>
+                        </p>
+                    </span>
+                </header>
+                <center>
+                    <h2>T-Rex ALIVE! 3D Model Dinosaur</h2>
+                </center>
+                <center>
+                    <style>
+                        .box {display: flex}
+                        model-viewer {width: 1500px; height:950px; margin:2, auto;}
+                    </style>
+                    <model-viewer id="myModelViewer" src="animated_t-rex_model_free.glb" camera-orbit="25deg 95deg 16m" camera-controls autoplay environment-image="JurassicPark.jpg" shadow-intensity="2" shadow-softness="1"></model-viewer>
+                    <center><h15>"Animated T-rex Model (free)" (https://skfb.ly/oFrJM) by ulunkwulunk is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</h15></center>
+                    <br>
+                    <div class="controls">
+                        <button onclick="changeAnimation('bite')">bite</button>
+                        <button onclick="changeAnimation('run')">run</button>
+                        <button onclick="changeAnimation('roar')">roar</button>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="animationSpeedSlider" class="slider-icon" min="-500000000000000000000000000" max="500000000000000000000000000000" step="20" value="500"/>
+                        <label for="animationSpeedSlider" class="slider-label">Animation Speed</label>
+                    </div>
+                </center>
+                <br>
+                <center>
+                    <h2>Wall-E</h2>
+                </center>
+                <model-viewer src="wall-e.glb" camera-orbit="120deg 95deg 15m" camera-controls autoplay></model-viewer>
+                <center><h15>"WALL-E" (https://skfb.ly/oHFZE) by Wolfy is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</h15></center>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Address</h3>
+                    <p><br />
+                    Austin, TX</p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="#">kimberly.wang@utexas.edu</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        const animationSpeedSlider = document.getElementById('animationSpeedSlider');
+        const myModelViewer = document.getElementById('myModelViewer');
+
+        animationSpeedSlider.addEventListener('input', () => {
+            const speed = animationSpeedSlider.value;
+            myModelViewer.animationPlaybackRate = speed / 6.0; // Set the animation playback rate between 0.0 and 2.0
+        });
+
+        function changeAnimation(animationName) {
+            myModelViewer.animationName = animationName;
+            myModelViewer.play();
+        }
+    </script>
+</body>
+
+</html>
