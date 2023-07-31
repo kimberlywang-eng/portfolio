@@ -56,6 +56,7 @@
                         .box {display: flex}
                         model-viewer {width: 1500px; height:950px; margin:2, auto;}
                     </style>
+                    
                     <model-viewer id="myModelViewer" src="animated_t-rex_model_free.glb" camera-orbit="25deg 95deg 16m" camera-controls autoplay environment-image="JurassicPark.jpg" shadow-intensity="2" shadow-softness="1"></model-viewer>
                     <center><h15>"Animated T-rex Model (free)" (https://skfb.ly/oFrJM) by ulunkwulunk is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</h15></center>
                     <br>
@@ -63,6 +64,7 @@
                         <button onclick="changeAnimation('bite')">bite</button>
                         <button onclick="changeAnimation('run')">run</button>
                         <button onclick="changeAnimation('roar')">roar</button>
+                        <button onclick="changeAnimation('attack_tail')">attack tail</button>
                     </div>
                     <div class="slider-container">
                         <input type="range" id="animationSpeedSlider" class="slider-icon" min="-500000000000000000000000000" max="500000000000000000000000000000" step="20" value="500"/>
