@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects Page - Kimberly Wang's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo">Home Page</a>
+				</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<!-- <li><a href="index.html">Home Page</a></li> -->
+							<li><a href="blogs.html">Blogs</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+							<li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+							<!-- <li><a href="#" class="icon brands fa-gmail"><span class="label">gmail</span></a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>COVID-19 Data Analysis<br />
+									</h1>
+								</header>
+
+									<hr />
+								<!-- Blockquote -->
+									<h2>Purpose</h2>
+									<blockquote>I got off a call with a F1 Simulator Software Architect the other day. It was during our talk that Pandas was mentioned for processing data. I never 
+										heard of Pandas before, so I did my research after the call. I went to one of my full-time friends in the Vision Automation team at Tesla and asked him what is Pandas.
+										He made the joke that it is like endangered species and then proceeded to tell me the actual software -- Pandas. He said it was a library in python that is used a lot to process
+										dataset in Excel with a bunch of data. I was like SOLD! Anything to make my life easier and more learning! I had prior experience in python, Excel, and C# from UT Austin and Tesla 
+										so I was excited. I also want to code in Jupyter Notebook as well so used this project for it.
+									</blockquote>
+
+									<hr />
+								<!-- Box -->
+								<h2>Thought Process</h2>
+								<div class="box">
+									<h3>Overview</h3>
+									<ul>
+									<li>Research on YouTube about Pandas</li>
+									<li>Apply the knowledge by trying an example</li>
+										&nbsp One of the Hackathon that I did recently we were using a big dataset for our product. We used Kaggle (a website that is free with one of the world's 
+											largest data sets).
+									</ul>
+									
+									<h3>Process Step</h3>
+									<ol>
+									<li>Found a dataset that I was interested in analyzing</li>
+										&nbsp https://www.kaggle.com/datasets/meirnizri/covid19-dataset?resource=download
+									<li>Install Jupyter Notebook: have to open terminal on the Jupyter Notebook location</li>
+									<li>Install python (already have -- upgraded it)</li>
+									<li>Load dataframes for python to manipulate in Pandas</li>
+										&nbsp Fix the indexing of the Excel with the Column A in Excel as 0 (zero)
+									<span class="image main"><center><img src="images/read_covidcsv.png" alt="" style="width:40%"/></center></span>
+									<li>Read the csv data: rearranging the filtering the data</li>
+									<div class="row">
+										<span class="image right"></span>
+										<div class="column">
+										  <img src="images/filteringdata_covidcsv.png" alt="" style="width:100%">
+										</div>
+										<span class="image right"></span>
+										<div class="column">
+										  <img src="images/rearrangingcolumn_covidcsv.png" alt="" style="width:100%">
+										</div>
+								</div>
+									<li>Data charts: install matplotlib using pip install matplotlib</li>
+										&nbsp made a bar chart for statistical analysis of the count of people with pre-exisiting' health conditions
+											vs no health conditions.
+									</ol>
+									</ul>
+							
+								<h3>Skills Learned & Tips</h3>
+									<ul>
+										<li>Filtering the data learned the difference from loc vs. iloc</li>
+											&nbsp Loc is label indexing and can access multiple columns <br>
+											&nbsp Iloc is for integer indexing
+										<li>Messed up as <code>countN = (df.iloc[:,7:17].eq(2).sum(axis=1))</code> instead had 
+											<code>countN = (df.iloc[:,7:17].eq(2)) == 1</code> since wanted to sum all the yes and no health conditions</li>
+										<li>It is important when learning a new language to figure out the proper document for the plots </li>
+										<li>If install a new library or add-in, rerun and close the Jupyter Notebook because it won't work if so</li>										
+									</ul>
+								<h3>Overall Thoughts</h3>
+									<p>It was really fun learning a new library in python. It challenged me a lot since it has been a while since I had coded in python -- but 
+										it was quick for me to pick it up and think a way to opimtize the code faster instead of having too many iterations. I hope to spend more 
+										time learning about Pandas and its capabilities to process data a bit more since it has only been one day since I heard of the library.
+									</p>
+									<p><center>Moral of the story: “Pandas...Not just an animal.” </center></p>
+
+							</div>
+							</section>
+					</div>
+					
+					
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!-- <section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section> -->
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p><br />
+								Austin, TX</p>
+							</section>
+							<!-- <section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section> -->
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">kimberly.wang@utexas.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+									<li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+									<!-- <li><a href="#" class="icon brands fa-gmail"><span class="label">gmail</span></a></li> -->
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<!-- <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul> -->
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
