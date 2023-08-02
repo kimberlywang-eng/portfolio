@@ -70,7 +70,7 @@
 											largest data sets).
 									</ul>
 									
-									<h3>Process Step</h3>
+								<h3>Process Step</h3>
 									<ol>
 									<li>Found a dataset that I was interested in analyzing</li>
 										&nbsp https://www.kaggle.com/datasets/meirnizri/covid19-dataset?resource=download
@@ -91,10 +91,34 @@
 										</div>
 								</div>
 									<li>Data charts: install matplotlib using pip install matplotlib</li>
-										&nbsp made a bar chart for statistical analysis of the count of people with pre-exisiting' health conditions
+										&nbsp Made a bar chart for statistical analysis of the count of people with pre-exisiting' health conditions
 											vs no health conditions.
 									</ol>
-									</ul>
+								</ul>
+								<h5>Challenges</h5>
+									<li>Plot not showing up</li>
+									<ol>
+									<li>Needed to execute all the cells -- not just the plot code</li>
+									<li>Made sure that there isn't another code cell that is causing an issue -- restarted the kernel and ran the cell again</li>
+									<li>Isolate the plot code in a new Jupyter Notebook cell -- to isolate any interference from other cells.</li>
+									</ol>
+									<li>Had <code>new_dfP = (df.iloc[:,7:17] == 1) | (df.iloc[:,7:17] == 2)</code> to filter the original dataframe, but should be a 
+									mask for selected rows that has values of either 1 "yes" or 2 "no".</li>
+									<ol>
+									<li>Incorrect code: <code>plt.bar(new_dfP.index, countY, label = 'Health Conditions', width = 0.4)</code></li>
+									<li>Fixed code: <code>plt.bar(df.index, countY, label='Health Conditions', width=0.4)</code></li>
+									</ol>
+									<li>Debug by <code>countY = df.iloc[:, 7:17].eq(1).sum(axis=1); 
+										print(countY)</code> found out that the <code>countY</code> was adding a column of the total number of yes pre-existing health conditions</li>
+										<span class="image right"><img src="images/debuggraphfindwhatcount_covidcsv.png" alt="" /></span>
+									<li>Needed the <code>countY</code> to be the total number of yes/no for the bar chart</li>
+									<li>Added the <code>totalCountY = countY.sum();
+										print(totalCountY)</code> </li>
+										&nbsp Fixed the <code>plt.bar(df.index, totalCountY, label='Health Conditions', width=0.4);
+											plt.bar(df.index, totalCountN, bottom=totalCountY, label='No Health Conditions', width=0.4)</code> figured that the "bottom" parameter isn't needed so 
+											we can plot two bars side by side.
+								<br>
+								<span class="image main"><center><img src="images/finaldata_covidcsv.png" alt="" style="width:70%"/></center></span>
 							
 								<h3>Skills Learned & Tips</h3>
 									<ul>
@@ -109,9 +133,10 @@
 								<h3>Overall Thoughts</h3>
 									<p>It was really fun learning a new library in python. It challenged me a lot since it has been a while since I had coded in python -- but 
 										it was quick for me to pick it up and think a way to opimtize the code faster instead of having too many iterations. I hope to spend more 
-										time learning about Pandas and its capabilities to process data a bit more since it has only been one day since I heard of the library.
+										time learning about Pandas and its capabilities to process data a bit more since it has only been one day since I heard of the library. The 
+										bar chart wasn't showing up. I was up late trying to figure it out, but went to sleep and figured it out in the morning.
 									</p>
-									<p><center>Moral of the story: “Pandas...Not just an animal.” </center></p>
+									<p><center>Moral of the story: “Pandas...Not just an animal. Sleep is the best debug. :D” </center></p>
 
 							</div>
 							</section>
