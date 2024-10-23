@@ -11,6 +11,105 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			
+			/* Slideshow container */
+			.slideshow-container {
+				max-width: 100%;
+				position: relative;
+				margin: auto;
+			}
+			
+			/* Hide the images by default */
+			.mySlides {
+				display: none;
+			}
+			
+			/* Next & previous buttons */
+			.prev, .next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				margin-top: -22px; /* Center the buttons vertically */
+				padding: 16px;
+				color: white;
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+				border-radius: 3px;
+				user-select: none;
+				z-index: 1; /* Ensure buttons are above the images */
+			}
+			
+			/* Position the "previous button" to the left */
+			.prev {
+				left: 10px; /* Adjust as needed for spacing */
+			}
+			
+			/* Position the "next button" to the right */
+			.next {
+				right: 10px; /* Adjust as needed for spacing */
+			}
+			
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover, .next:hover {
+				background-color: rgba(0, 0, 0, 0.8);
+			}
+			
+			/* Caption text */
+			.text {
+				color: #f2f2f2;
+				font-size: 15px;
+				padding: 8px 12px;
+				position: absolute;
+				bottom: 8px;
+				width: calc(100% - 24px); /* Adjust width to account for padding */
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+				border-radius: 5px; /* Optional: add rounded corners */
+			}
+			
+			/* Number text (1/3 etc) */
+			.numbertext {
+				color: #f2f2f2;
+				font-size: 12px;
+				padding: 8px 12px;
+				position: absolute;
+				top: 0;
+			}
+			
+			/* The dots/bullets/indicators */
+			.dot {
+				cursor: pointer;
+				height: 15px;
+				width: 15px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+				transition: background-color 0.6s ease;
+			}
+			
+			.active, .dot:hover {
+				background-color: #717171;
+			}
+			
+			/* Fading animation */
+			.fade {
+				animation-name: fade;
+				animation-duration: 1.5s;
+			}
+			
+			@keyframes fade {
+				from {opacity: .4}
+				to {opacity: 1}
+			}
+			
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -28,8 +127,8 @@
 							<!-- <li><a href="index.html">This is Massively</a></li>
 							<li class="active"><a href="blogs.html">Generic Page</a></li>
 							<li><a href="projects.html">Elements Reference</a></li> -->
-							<li><a href="blogs.html">Blogs</a></li>
-							<li class="active"><a href="projects.html">Projects</a></li>
+							<li class="active"><a href="blogs.html">Blogs</a></li>
+							<li><a href="projects.html">Projects</a></li>
 						</ul>
 						<ul class="icons">
 							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -45,55 +144,564 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">January 4, 2022</span>
-									<h1>Fall 2021: Breaking the Status Quo<br />
+									<span class="date">January 9, 2023 - August 18, 2023</span>
+									<h1>8 Months Full of Learning: Tesla<br />
 									</h1>
-									<p>A semester full of adventure and broke the status quo by getting out of my comfort zone to achieve what I thought was impossible.</p>
+									<p>I didn't look into engineering as a possiblty until I started applying for college and figuring out what major to pick. Freshman year, I always been interested in Elon Musk and
+										and his entrenprenurship as well as business model. I had watched interviews and read his books. I had even joined a hyperloop team and met people with similar passions as me.
+										That is where my journey started...Texas Guadaloop
+									</p>
 								</header>
-								<div class="image main"><img src="images/GuadaloopFoundOut.jpg" alt="" /></div>
-								<p>If I was given the opportunity to rewrite history Fall 2021 won't be one that I would want to rewrite...because it was the semester of being in-person/hybrid setting for the first time in college and engineering Kimberly started to blossom.  </p>
-								<h3>Global LLC</h3>
-								<p><span class="image right"><img src="images/Global LLC.jpg" alt="" /></span>My first thought of campus was coming to my new home for the next year. A combination of half domestic students, one of them being me, and the other half was international students. I never would have thought how much they changed my life for the better and I am grateful to be given the chance and argeed to stay in the Global Living Learning Community. The first year I did it virtually, but in-person it was different, a more personal approach. </p>
-								<p>The people in the dorm made me realize that life is short because most of the international people were exchange, so because of their limited time in the US they wanted to explore and travel and ingitied my ambition to try something new.</p>
+								<div class="image main"><img src="images/tesla_cyber.jpg" alt="" /></div>
+								<p>If you told me, 6 months or even a year ago that I was going to be working at one of my dream companies -- I would have laughed at even the thought of it.</p>
+								<h2>Pre-Tesla</h2>
+								<p>So a lot of people ask me how did I get into Tesla as my first EVER internship without any prior work experiene. I want to say it was just luck -- me being at a place at the right moment.
+									However, I feel me outlining some Tesla moment might be helpful for others. First, I applied to Tesla like 5 times or more and all of the time I had never heard back. However, I got emails about 
+									an event on March 16, 2022: "A Study Break w/ Tesla: An Intro to Cell Engineering". I attended ALL of them -- no matter it was the same information. It was to the point that I remember the mission statement by heart: 'accelerating the world’s 
+									transition to sustainable energy'. I had attended all. I just knew I was going to meet some incredible people. One of the 
+									series had a gentleman named, Lual (David) Akuien. 
+									<span class="image left"><img src="images/studybreakwTesla.jpg" alt="" /></span>
+									Fast forward, AIChE was hosting a conference for the Southwest Regional Conferene 2022. I paid and attended the conference 
+									just to meet one company -- Tesla. 
+									I didn't go into the conference with the expectation of getting an internship. I just wanted to see and learn more about what the company is doing aside from the news. I also had a funny experience with 
+									signing up for a jeopardy competition for AIChE expecting for the jeopardy to be fun facts, but it turned out to be facts about chemcial engineering. I was a sophomore and only had a few chemical engineering classes --
+									so that was a cure memory and one for the books, but the team and I was able to win 2nd place!
+									<span class="image right"><img src="images/aiche_jeoporay.jpg" alt="" /></span>
+									I attended their presentation and met three gentleman: Tom Wood, Andrés Orlando and you guess it -- Lual Akuien. I approached Lual first and told him that I met him through the Tesla Summer Series.
+									We talked and our conversation wasn't about Tesla, but himself and our hobbies. I felt like I was catching up with an old friend. Later, on the conference, I signed up for the Jeoproary Competition (keep in
+									mind I thought this was fun facts Jeoproary NOT Chemical Engineering Jeoproary -- I learned about this the day of and did it for the kicks and giggles). Our team ended up getting 2nd place!
+									After, I sitted around and noticed Tom left, but Andrés was still there. I approached him since he was a mechanical engineer and was like "Do you love F1?" He didn't know what it was and asked about it. 
+									I said they are fast cars. We joked around and I told him that I love mechanical engineering and do a lot of it. He asked for my resume and he was like "you aren't a mechanical engineer! You lied to me (as a joke)."
+									But I was like no I love mechanical engineering -- I would like to say that chemical engineering is my brain (how I think -- asking and digging those why? and how things work question?) and mechanical engineering is my heart.
+									I am also really interested in simulation so I asked him about his powder flow simulation and we talked about that for a while and my involvement with Texas Guadaloop. He then stopped me said let's continue this  
+									gave him email and told me to send him an updated copy of my resume. I was estatic and immediately called my family once I got home on April 30, 2022. I got an interview the next week on May 16, 2022. I didn't hear back until I was towards the 
+									end of my study abroad in Denmark at 9pm-10pm local time on June 23, 2022 (which is June 22, 2022 2:20pm) for an offer -- the rest is history.  
+								</p>
+								<p>**Note: As an employer for Tesla -- I am under a strict NDA. I can't share what I did exactly, but I can talk about my feelings and people I met (less-technical).</p>
+								<h2>Cathode, Manufacturing Engineering Intern</h2>
+								<p>
+									<h3>Week 1</h3>
+									I remember I couldn't sleep the night before. I can't remember if it was because I was nervous or excited or mixed or other emotions that I can't remember. Nevertheless, I woke up at 5am and to arrive to COTA early morning 
+									because the call time to be at COTA was 6:45am. Little did I know that they were going to start around 9am. I got to learn more about Tesla, safety, and organizations they have in the company. I also got my badge and 
+									laptop it was getting these items that I was like "wow. it is official." The orientation ended at 4pm, but I didn't get to meet Andrés because it was at COTA. It wasn't until the 2nd Day did I get to meet the team and Andrés. 
+									I felt more nervous because I knew I wanted to do excellent, not just good. I wanted to change and optimize and make improvements -- be the great intern that see the issues.
+									<span class="image right"><img src="images/tesla_cota_firstday.jpg" alt="" /></span>
+									I got a project already on my first week since I finished the training and downloading software as quick as possible to design something based on certain constraints and use items that are readlly avaliable. I also learned about the process that I was building, but 
+									it wasn't until 3 months did I feel that I had a full grasp of the concept. It was the first week that I went to an intern party that weekend. My social battery was actually dead, but I knew in my heart that 
+									if I didn't go to the party then I would never go and make excuses to not meet other interns -- this was espeically hard because I was the only intern in my department at the time.
+									Little did I know that one of the intern I had met at the party would be the intern for my next team that I would internally transfer to in Tesla. I would also say that he had one of the coolest projects and I had a tour with him the following
+									weekend to understand his projects more detailed. I also found myself working on the weekend the first week because I thought to myself if I finish the work the next week and started to set extreme goals to myself to push myself and grow further than 
+									I had imagined. I presented my "finished" work that Monday and I remember being	nervous going up to my supervisor for the project and ask for their advice -- I wanted it to be good the first time. Spoiler Alert: It wasn't good the first time, but my 
+									supervisor gave me critics on what I should change that helepd me grow. I also remember that my third day -- Andrés asked me to write a bio. I was funny and a learning experience because Tesla was my first internship
+									so I never learned to write a bio before...I wrote one that was similar to a bio in a college presentation for faculty and staff, but I realized that a bio in industry is really different and I am grateful that Andrés fixed my bio before
+									send it to the team's group email. An industry email has their previous experience, where they graduated and where they are from with some hobbies about themselves with maybe a cute picture of them and their pet.
+									<span class="image left"><img src="images/tesla_internparty.jpg" alt="" /></span>
+								</p>
+								<h3>Week 2 and so on...</h3>
+								<p>
+									I started to learn more of the process and became involve in events happening on the factory such as Asian New Year with Tesla letting employers sign the Model Y hoods 
+									and got red envelopes. The 2nd week I started to value going outside and exploring Austin more than I did when I was in school since I had a car and I also had the time to explore and do stuff that I loved.
+									After, exploring the city, Tesla has discounts of events happening in Austin for the employees so I bought tickets for my brother and I to see the Austin Spurs game. Our 
+									first professional basket game. The basketball players were so fast moving across the court.
+									I later joined my friends for an ice cream party that night. I started to value a life of relaxing and understanding that I was burnt out in Fall 2023 from school and didn't realize it.
+									I soon hang out with my Tesla intern and full-time friends and build a community there from going kayaking and enjoying the Austin weather and doing escape rooms.
+									<center>
+										<!-- Slideshow container -->
+										<div class="slideshow-container" id="slideshow1">
+	
+											<!-- Full-width images with number and caption text -->
+											<div class="mySlides fade">
+											<div class="numbertext">1 / 8</div>
+											<img src="images/tesla_newyearparty.jpg" style="width:50%">
+											<div class="text">Tesla Celebrating Chinese New Year by Employees Signing a Model Y hood & passing red envelopes!</div>
+											</div>
+										
+											<div class="mySlides fade">
+											<div class="numbertext">2 / 8</div>
+											<img src="images/tesla_spursboard.jpg" style="width:50%">
+											<div class="text">Tesla: Employee Discount -- Jason (my brother) and I went to the Austin Spurs Basketball Game</div>
+											</div>
+										
+											<div class="mySlides fade">
+											<div class="numbertext">3 / 8</div>
+											<img src="images/tesla_spurs.jpg" style="width:25%">
+											<div class="text">Tesla: Employee Discount -- Jason (my brother) and I went to the Austin Spurs Basketball Game</div>
+											</div>
+
+											<div class="mySlides fade">
+												<div class="numbertext">4 / 8</div>
+												<img src="images/tesla_boat.jpg" style="width:50%">
+												<div class="text">Enjoying the Weekend Kayaking with Interns</div>
+											</div>
+
+											<div class="mySlides fade">
+												<div class="numbertext">5 / 8</div>
+												<img src="images/tesla_threewbirds.jpg" style="width:50%">
+												<div class="text">Enjoying the Weekend Kayaking with Interns</div>
+											</div>
+
+											<div class="mySlides fade">
+												<div class="numbertext">6 / 8</div>
+												<img src="images/tesla_hiking_austin.jpg" style="width:50%">
+												<div class="text">Enjoying the Weekend with my UT Chemical Engineering Friends Hiking</div>
+											</div>
+
+											<div class="mySlides fade">
+												<div class="numbertext">7 / 8</div>
+												<img src="images/tesla_hiking_liveastory.jpg" style="width:50%">
+												<div class="text">Enjoying the Weekend with my UT Chemical Engineering Friends Hiking: Cool Art</div>
+											</div>
+
+											<div class="mySlides fade">
+												<div class="numbertext">8 / 8</div>
+												<img src="images/tesla_eurka room.jpg" style="width:50%">
+												<div class="text">Experienced the Eureka Room</div>
+											</div>
+
+											<!-- Next and previous buttons -->
+											<a class="prev" onclick="plusSlides(-1,'slideshow1')">&#10094;</a>
+											<a class="next" onclick="plusSlides(1, 'slideshow1')">&#10095;</a>
+										</div>
+										<br>
+										
+										<!-- The dots/circles -->
+										<div style="text-align:center">
+											<span class="dot" onclick="currentSlide(1, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(2, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(3, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(4, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(5, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(6, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(7, 'slideshow1')"></span>
+											<span class="dot" onclick="currentSlide(8, 'slideshow1')"></span>
+										</div>
+									</center>
+								</p>
+								<p>
+								I had then learned about other projects my team was working on and had my first 3 hr long meeting with my team to learn about the project's process. I started to understand and applied and see
+								the coworkers that I worked with were from all over from ExxonMobil to Dow and others. The meeting was one of the only times I used chemical engineering by optimizing a process using molar flow rates 
+								calculations. Later, one of our coworkers is in a band so our team went to support him playing -- it was my first "happy hour." A term to socialize with the team outside of work -- really fun and cool
+								to meet others outside of the work environment and learn more about them and their hobbies. It was also a place for me to learn of different projects that my coworkers are doing and maybe see if I can learn 
+								<span class="image right"><img src="images/tesla_wicshacks.jpg" alt=""/></span>
+								from them by getting a hands-on project. It was during this time that I was also an undergraduate research assisstant for Dr. Brennecke. It was diffcult to balance the lab and Tesla with me coming home at late nights,
+								but it taught me to understand to focus one thing at a time. You can't be at two places at once -- I was putting uncessary stress on myself because I was trying to be an employee and a student at the same time.
+								I realized their is a balance and started to be less of a student and more industry focus...but still a student and a kid. I still partcipated in events and Hackathons and talent shows. I partcipated in the WiCS Hacks 2023 again and 
+								this time when without a group. It was probably one of the best experience because I went in with no expectations and learned so much about coding from different people. 
+								I learned about databases from Kaggle (that I used for my PANDAs learning on COVID-19), Figma (to design websites), being open to communicate different ideas to new people, W3Schools for learning, JupiterNotebook, 
+								the command of CTRL+D to change all values.
+								<p><center><a href="projects - COVID Kaggle.html">Click Here for COVID-19 Data Analysis</a></center></p>
+								<span class="image left"><img src="images/tesla_wicshacks_screen.jpg" alt="" /></span>
+								More and more I started to fill in the time with my values. School doesn't have an end time, but works does with my work ending once I leave the office. I started to put boundaries to myself 
+								and not bring work home as best as I can -- no matter how late I stay in the office. I started to fill my time with going to the gym and improving this website.
+								
+
+
+
+
+								The team has two groups: design/process engienering and operations (i.e. sustaining team). I was on the design and process engineering team. I was the only intern in the team.
+								
+
+								I was definetly cool because it provided me with a lot of opportunities to be emersed in a lot of projects whereever help was needed I was there without being called on.
+								It is unbelieveable how much knowledge that I learned in the role. The amount of technical skill and knowledge that wasn't taught in school made it exciting. I wasn't pressured to study for a test that impacted only myself. 
+							I was doing work that imapcted the team, the company, and the community. It made the work so much rewarding that I was excited to come to work everyday.</p>
+							</p>
+							<h2>My 1 Month Teslaveriary</h2>
+							<p>
+								Within less or at the month mark, I was able to finish one of my mechanical design projects and send out of purchasing order for it to be fabricated. It was fun and I was learning more everyday by using AutoCAD and SolidWorks daily.
+								I started to have more skill and gain a better understand of pushing myself by thinking on repetitve tasks on how to optimize my learning and productivity to make the job faster. I went to several other happy hours from different teams 
+								from meeting and introducing myself to the peopel I see just by going up to them and trying to learn what they do for Tesla. One my second happy hour with my team, I learned that one of my coworkers did simulation modelling: EDEM simulation
+								for powder handling and gain an experience of a different type of modeling compared to ANSYS and other simulation.
+								It was a little after my one month Teslaveriary that Texas Guadaloop started recruiting for the spring and that occupied my weekends, but I still did things outside my comfort zone and learned
+								Latin Dance with one of my pro-friends. Trust me -- I learned to sway those hips!
+							
+							It was also during the month of February that I was applying to be the new president of Texas Guadaloop (an organization that changed my life that encouraged and allowed me to embrace
+								being a chemcial and mechanical at the same time to persue that adventure). I also remember my first desk buddy, Elise Ras. One of the most hardworking people I have meant and such an inspiring to 
+								keep working hard. I remember I was updating something and Elise was doing it with me since it was high critical path. We were in the office late at night and we called each other, but we didn't realize we were
+								both still in the office. We bonded on very similar hobbies and Elise was also the other person that interviewed me with Andrés. Elise was such an outgoing and outdoorisy person and we even bonded with broadway 
+								shows. It was one of the first interactions that broke my shell and reminded me that the full-time had life outside of Tesla that I forgot after being with the company for one month.
+								<span class="image right"><img src="images/tesla_boradway.jpg" alt="" /></span>
+								I had the opportunities and money to be able to attend the broadway show: Aladdin with the student discount. It was that moment that I remembered a saying that my mom always talked about that when we are young we have the energy, time, but not the money
+							, but when we are older -- we don't have the energy, but we have time and money. It was that moment that I had a equilibrium of all three of time, energy and money. The perfect tri-fec-A!
+							The same day on February 19, 2023 -- I got a call from Trevor that I was the next president of Texas Guadaloop!
+							The next week on February 21, 2023 -- I had a weekly meeting with Andrés and he said out of the blue that I was doing a fastatics job at work! I was escatic that I took a picture of my reaction.
+							It was nice to have your manager recognize your work to you and it is something that I applied into Texas Guadaloop and future leadership positions. A simple "thank you" was enough to push me forward.
+							I also bought some cool Tesla merch and employee exclusive merch and some merch for my friends because I got an employee discount.
+								
+							</p>
+							<p>
+							<h2>A Spontaneous Trip</h2>
+								On February 22, 2023, I was at Mozart's Coffee with some of my friends after watching Engineerign HQ livestream from Tesla and one of my friends was going to New York. I just said as a joke of what if 
+								I went with you. He proceeded to call his mom and sister and they agreed with excitment. We went home, bought tickets and that was a Wednesday -- I left Friday after work. On Thurs, my friends and I went to support
+								one of our friends hosting a review sessions for a chemical engineering class.
+								That Friday, we broaded the flight and I read proposals of all the president and VPs that applied to Texas Guadaloop to gain a better understanding of the issues and prepare for my 1:1 meetings with them if I had questions.
+
+								During, my trip in NY, I felt like a local New Yorker with my friend's family and tried delicious Filipino food. We went to explore Time Square and I tried Jollibee for the first time. It was so good.
+								It was my second time in New York, but it was beautiful -- the fast pace energy encourage me to keep moving towards my goals faster each day.
+								They were showing Hamilton at the time and we were able to talk to the Hamilton cast -- some of the nicest and sweeatest people. We traveled and explore the city by going to 
+								subways and the 9/11 memorial. We even saw the UT Austin - Chemical Engineering Clocktower at NY.
+								One my last day of my spontaneous weekend trip, I took an inspiring pick next a satuture. It is interesting looking back at it because
+								it seems a before and after of my younger self as a "blank slate" to someone to a grown women from mistakes, success growing from my experiences.
+
+								<!-- Slideshow container -->
+								<center><div class="slideshow-container" id="slideshow2">
+	
+									<!-- Full-width images with number and caption text -->
+									<div class="mySlides fade">
+									<div class="numbertext">1 / 7</div>
+									<img src="images/tesla_nyboardflight.jpg" style="width:50%">
+									<div class="text">Broading a spontaneous flight to NY</div>
+									</div>
+								
+									<div class="mySlides fade">
+									<div class="numbertext">2 / 7</div>
+									<img src="images/tesla_ny_guadaproposal.jpg" style="width:50%">
+									<div class="text">First Order of Business as President of Texas Guadaloop</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">3 / 7</div>
+										<img src="images/tesla_ny)jollibee.jpg" style="width:50%">
+										<div class="text">My First Try of Jollibee</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">4 / 7</div>
+										<img src="images/tesla_nytimesquare.jpg" style="width:50%">
+										<div class="text">Time Square NY</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">6 / 8</div>
+										<img src="images/tesla_nyhamilton.jpg" style="width:50%">
+										<div class="text">Saw the Cast of Hamilton during the Time</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">7 / 8</div>
+										<img src="images/tesla_ny_clocktower.jpg" style="width:50%">
+										<div class="text">A Similar CPE Clocktower in NY</div>
+									</div>
+
+									<div class="mySlides fade">
+										<div class="numbertext">8 / 8</div>
+										<img src="images/tesla_ny_inspiringgirl.jpg" style="width:50%">
+										<div class="text">NY Inspiring Girl to Dream</div>
+									</div>
+
+									<!-- Next and previous buttons -->
+									<a class="prev" onclick="plusSlides(-1, 'slideshow2')">&#10094;</a>
+									<a class="next" onclick="plusSlides(1, 'slideshow2')">&#10095;</a>
+								</div>
+								<br>
+								
+								<!-- The dots/circles -->
+								<div style="text-align:center">
+									<span class="dot" onclick="currentSlide(1,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(2,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(3,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(4,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(5,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(6,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(7,'slideshow2')"></span>
+									<span class="dot" onclick="currentSlide(8,'slideshow2')"></span>
+								</div>
+								</center>
+
+								I got back home around 1am that Monday and that morning I went to work. That week -- it was also Investor Day with GigaTexas hosting it and I got to volunteer for the event and that was
+								the first time that I saw Elon in person. (A hot-topic question once someone finds out that you work at Tesla.)
+								<span class="image left"><img src="images/tesla_four models.jpg" alt="" /></span>
+								The internship program also has great opportunities and events that they host that I found really informative like future careers, internship and guest speakers. I also was able to host events 
+								with Texas Guadaloop on inviting my previous recruiter, Lual, on tips to help for Guadaloop members and social events for Guadaloop and see if there is any problems 
+								and put of the fires to get my face out with the members and meet them -- as an open face for them
+								to reach out. I attended UT Austin's Holi event that I found out my full-time friends at Tesla also went to celebrate. 
+								
+								It was a little past month three...spring break. I gather the cureoage to ask Andrés if I can work from home for spring break. Andrés approved of my request and it was the best because I miss my family since I was just 
+								working straight. 
+								<span class="image right"><img src="images/tesla_holi.jpg" alt="" /></span>
+								Over the weekend, I attended the Houston Rodeo -- a family tradition. It was also durign that week that I saw a post on Tesla's ERG page of an internship opportunity. A man named 
+								Dmetrius Alexander -- posted it and I reached because I wanted to learn of different teams. I was also open with telling Andrés that I was reaching out of other teams to be respectful, because we had 
+								talked of extending my internship to summer after 2 weeks of my internship. I jsut wanted to grow and explore other teams because this was my first internship. I drove back to Austin alone because I had to go to 
+								be at SXSW conference since Texas Guadaloop was a speaker. It was cool to advocate for a more sustainable transportation method to a big audience and I got the opportunity to host -- EuroTube's R&D Director, Lorenzo Benedetti.
+								I had dropped Lorenzo at the airport and went straight to work to finish some stuff that weekend since the airport was near work.
+								March 20, 2023 -- I ran my first meeting as president of Texas Guadaloop, the room was so full, but it was really nice to have my friends come to support me.
+								March 22, 2023 -- I had a meeting with Dmetrius and we talked after the meeting he suggested me to reach out to Nick Spaudling's team that delaut of more mechanical design and my interest than the original internship post. Dmetrius 
+								sent a message to Nick and the job post hiring managers and I had a meeting with both.
+								<span class="image left"><img src="images/tesla_guadaloop president meeting.jpg" alt="" /></span> Nick told me that he was already full for the head-count on interns, but I still was interested to learn more about his team.
+								I remember after the meeting not sure what I did -- all I did to prepare was have a powerpoint of my projects of descriptions and ask questions that he said let's see if I can add a position on the team. 	
+								It was also that weekend that I saw Nick's team at a party and joined and played volleyball with other full-time and interns. I would say the team and I won 3-0.
+								March 30, 2023 -- my first ever HAZOP and another one of the only chemical engineering into the job.
+								<span class="image right"><img src="images/tesla_volleyball.jpg" alt=""/></span>
+							</p>
+							The Friday of March 31. I went to the 2023 AIChE Southwest Regional Conference at Texas A&M. The event signified a year since I had met Andrés and a decision that changed my life.
+							It was really cool to see since the event changed my life and it was the first time that I came with my brother as well since he started as a freshman at UT Austin. It was amazing to
+							explore Aggieland and its surrounding area. I was able to stay with my high school friend, Kameela! The trip was top off with my family and I surprising him for my brother's birthday at Chiptole!
+							It was kind of funny because I needed my brother to go to Chiptole so I said the car was parked there but he didn't realize my parents were there surprising him from Houston. Ended the trip the next
+							day to a famous place at A&M that one of my coworkers suggested called Dixie Chicken. The resturant was a bar type feel with names engraved into the tables. 
+							<!-- Slideshow container -->
+							<center><div class="slideshow-container" id="slideshow3">
+	
+								<!-- Full-width images with number and caption text -->
+								<div class="mySlides fade">
+								<div class="numbertext">1 / 7</div>
+								<img src="images/tesla_aggieland.jpg" style="width:50%">
+								<div class="text">AIChE Southwest Regional Conference at Texas A&M</div>
+								</div>
+							
+								<div class="mySlides fade">
+								<div class="numbertext">2 / 7</div>
+								<img src="images/tesla_jasonandI.jpg" style="width:50%">
+								<div class="text">AIChE Southwest Regional Conference: Jason & I (full circle moment)</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">3 / 7</div>
+									<img src="images/tesla_jasonbday.jpg" style="width:50%">
+									<div class="text">Jason's Birthday at the Conference</div>
+								</div>
+
+								<!-- Next and previous buttons -->
+								<a class="prev" onclick="plusSlides(-1, 'slideshow3')">&#10094;</a>
+								<a class="next" onclick="plusSlides(1, 'slideshow3')">&#10095;</a>
+							</div>
+							<br>
+							
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+								<span class="dot" onclick="currentSlide(1,'slideshow3')"></span>
+								<span class="dot" onclick="currentSlide(2,'slideshow3')"></span>
+								<span class="dot" onclick="currentSlide(3,'slideshow3')"></span>
+							</div>
+							</center>
+
+							The next day, I reported to duty at work. It was super cool but it was the day that I finally got the chance to get CPR trained. I got tranined with some of the other operators and finished the online course last Friday. I did CPR on 
+							different dummies like a baby and adult. It was nice to have a badge of accomplishment that I always wanted to train and had a company that supported my endenvors. 
+							The next day, I went to volunteer for one of Tesla's ERG's at the Moody Amphiteater for the Austin Opera: Bella Noche de Musica event. It was so beautiful and it was nice to listen and just 
+							relax to music.
+							<span class="image left"><img src="images/tesla_ergvolunteer.jpg" alt="" /></span>
+							Throughout April I became closer to my Tesla friends and went to different hiking trips and explored Austin way more than I did in school. It showed there was life outside of school and how beautiful it is because
+							in previous years I didn't have a car or time to ride the Metro. I even used my Tour Guide skills and gave my friends a tour around UT's campus. One of my friends, Amit, got me to like coffee. He made amazing coffee in the office.
+							On April 11, 2023, some of my friends who were operators of one of my projects. There operators I met as they studied for mutiple exams they had to take for the job. One day I just asked what they did and learned more of my project's process.
+							I told them one day whenever I would love to do a site walk with them and understand their mindset so I can incorporate a better system design since they are a part of the sustaining them and I was design and April 11 was the day!
+							It was really cool to see a process that I saw so much in the 3D model incorporated in real-life. It was the first time that I was like WOW! I understand how it worked and all the equipment. It was really cool!
+							<span class="image right"><img src="images/tesla_calicoworkers.jpg" alt="" /></span>
+							That afternoon another one of my high school friends interned at Tesla in California and his coworkers came to the factory and I got invited to see the factory rooftop tour. It was the coolest to see all the solar panals. Of course, I finished my work
+							before I went on the tour, but I learned how sustainable Tesla tries to be in every of its process and learned about their supercomputers and gained a lot of friends that later I asked for their input in other projects down the line that got me a return offer
+							for mutiple teams.
+							
+							April 15, 2023: my UT friends and I went to my first comedy show. RandyFeltFace. It was so fun. His jokes are very relatable for everyone. It was his president's tour show and my friends and I
+							couldn't show with how amazing the theatrical the song was at the end of the performance. 
+							<span class="image left"><img src="images/tesla_randyfeltface.jpg" alt="" /></span>
+
+							
+							The next day, I went to the MotoGP with my Tesla friends. It was definetly amazing to here the sound of the fast motocycles through the race. Although, the Texas heat was burning us. I was able to walk the track after ever since
+							the last Formula 1 US GP after the free practice on Friday. We munch on snow cones for Amit's Birthday. Right after the Moto GP, I went to celebrate Luke's Birthday.
+							The following Monday, one was of the stressful days, I had a late night at work, but  had to drive home early since for my second GM as president of Texas Guadaloop, an organization that changed my life 
+							and I love. I became president to give back to the community and help out to develop and next engineers. It was a fun day though and I was able to teach my coworkers one of my proejcts and gave my tips/tricks
+							since one of my projects became a high priority item for one of the areas that everyone came to help out. April 19, 2023 I was able to be a part of my friend lunch and learn with a vendor that provided us free food. 
+							<center><div class="slideshow-container" id="slideshow4">
+	
+								<!-- Full-width images with number and caption text -->
+								<div class="mySlides fade">
+								<div class="numbertext">1 / 5</div>
+								<img src="images/tesla_motogp.jpg" style="width:50%">
+								<div class="text">MotoGP with Tesla Friends</div>
+								</div>
+							
+								<div class="mySlides fade">
+								<div class="numbertext">2 / 5</div>
+								<img src="images/tesla_lukebday.jpg" style="width:50%">
+								<div class="text">Luke's Birthday Party</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">3 / 5</div>
+									<img src="images/tesla_hikelake.jpg" style="width:20%">
+									<div class="text">Hikeing with Tesla Friends & Chilling Near Lake View</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">4 / 5</div>
+									<img src="images/tesla_chillinghike.jpg" style="width:20%">
+									<div class="text">Hikeing with Tesla Friends & Chilling Near Lake</div>
+									</div>
+	
+								<div class="mySlides fade">
+									<div class="numbertext">5 / 5</div>
+									<img src="images/tesla_moontower.jpg" style="width:50%">
+									<div class="text">Comedy Show: Moontower</div>
+								</div>
+
+								<!-- Next and previous buttons -->
+								<a class="prev" onclick="plusSlides(-1, 'slideshow4')">&#10094;</a>
+								<a class="next" onclick="plusSlides(1, 'slideshow4')">&#10095;</a>
+							</div>
+							<br>
+							
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+								<span class="dot" onclick="currentSlide(1,'slideshow4')"></span>
+								<span class="dot" onclick="currentSlide(2,'slideshow4')"></span>
+								<span class="dot" onclick="currentSlide(3,'slideshow4')"></span>
+								<span class="dot" onclick="currentSlide(4,'slideshow4')"></span>
+								<span class="dot" onclick="currentSlide(5,'slideshow4')"></span>
+							</div>
+							</center>
+							It was a nice surprise. Throughout the month, it was a constant grind of working at Tesla, but also going back home to fix problems for Texas Guadlaoop and have 1:1 with the members to learn more about their grows
+							and develop them as professionals and leaders. One of my best friends at Tesla, named Atul, on gave me Lemon Ginger a cup package because I said it reminded me of my mom's tea she makes when I am sick. Atul and Vivek are 
+							two guys who reminded me at Tesla to enjoy and have fun at work. A smile goes a long way for us. We always enjoy going into work everyday. 
+							Apirl 21, 2023 Texas Guadaloop had our end of the year banquet at UT's underground boweling. I remember feeling a sign of relief because throughout the whole month, if I wasn't doing Tesla, I was doing Texas Guadaloop either with transition meetings with the 
+							previous president and executive team or with other members. It was nice to know that I was able to see the support form all the members on the team for my presidency. Tesla gave me the opportunity to figure myself out and 
+							see what Texas Guadaloop lacked to industry startups. 
+							<span class="image left"><img src="images/tesla_2022-23banquet.jpg" alt="" /></span>
+							Over the weekend a couple of my friends went to UT's percurssion concert from one of our friends was performing. The concert incorporated different ways to produce sound and make me miss my dancing days.
+							After, my UT friends and Tesla friends went to a churro food truck late at night. It was delicious.
+							That weekend on April 23, 2023: I went to the SWE banquet with my friend. We tried to take pictures, but the wind was not corporating, but the view was beautiful. Right after the event, I went to my friend's cello recital.
+							Cello was actually the one instrument that I would love to learn how to play. It can go as high as a violin and low as a bass. It is in the middle of all string instruments. 
+							The monday I got invited to my first happy hours from one of my sister departments that I worked close with. 
+							It was super fun because it was with the vendors and they are the most lively people. They just light up the room. We bonded over being form
+							Houston and some UT and A&M alumni. 
+
+							<center><div class="slideshow-container" id="slideshow5">
+	
+								<!-- Full-width images with number and caption text -->
+								<div class="mySlides fade">
+								<div class="numbertext">1 / 3</div>
+								<img src="images/tesla_liampercussionperforman.jpg" style="width:50%">
+								<div class="text">Enjoying UT's Percussion Performance</div>
+								</div>
+							
+								<div class="mySlides fade">
+								<div class="numbertext">2 / 3</div>
+								<img src="images/tesla_churrotruck.jpg" style="width:20%">
+								<div class="text">Churro Truck Run: Late Night Snack</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">3 / 3</div>
+									<img src="images/tesla_swebanquet.jpg" style="width:20%">
+									<div class="text">SWE Banquet View</div>
+								</div>
+
+								<!-- Next and previous buttons -->
+								<a class="prev" onclick="plusSlides(-1, 'slideshow5')">&#10094;</a>
+								<a class="next" onclick="plusSlides(1, 'slideshow5')">&#10095;</a>
+							</div>
+							<br>
+							
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+								<span class="dot" onclick="currentSlide(1,'slideshow5')"></span>
+								<span class="dot" onclick="currentSlide(2,'slideshow5')"></span>
+								<span class="dot" onclick="currentSlide(3,'slideshow5')"></span>
+							</div>
+							</center>
+							
+							It was nice. We didn't talk about work.
+							<span class="image right"><img src="images/tesla_sweban_kim.jpg" alt="" /></span>
+							On April 26, 2023: One of the most amazing days came. Don't get me wrong I loved my team, but it was my first internship. I knew in my heart if I stayed with the team. I would always question what would my life be outside if I didn't stay.
+							I knew how my life would be if I did stay. It was the lingering feeling that made me want to explore teams. I explored and had coffee chat with a lot. But funny enough one of my favorites ended up being one that I met the intern at a 
+							Tesla intern event that I was engaged from the start. I schedueld a tour the next day after our initaial meeting and became friends. A few months after, one of the ERG posted an internship opening, the opening wasn't for the team, but a sister team. 
+							I still constacted the person, named Dimestrius, who later became my closest mentors in industry and life. After our talk, he connected me with the team with the opening, but also another team that seemed like a better fit,
+							oddly enough it was my friend's. I met with the manager, Nick and he was the coolest guy. So up front. We chat and he was straightforward that he didn't have any openings, but after our chat he said let's see what I can do. Lucky enough,
+							I was communicating this with my current manager Andrés. He was very supportive and was nice enough to hold my position and April 26, 2023. I got a call from Nick. I just remember being scared answering the call with a shaking "hi"
+							and all I heard was "Kim welcome to the team." I was so excited! I was like this is a dream! 
+							<span class="image left"><img src="images/tesla_jasongottesla.jpg" alt="" /></span> I just remember saying "thank you" over and over again. After our call, I get the end from the recruiter to sign the contract and logistics that night
+							I was so excited I stayed in the office to learn more DEME (a simulation modeling of powder equipment designs) and I was learning for Dr. Yu. Every biweekly I went to the happy hours with the sister department, but on
+							April 27, 2023: it was special. My brother got an offer from Tesla for Fall 2023! We had a celebration dinner after my happy hour. He did it on his own and got it as a freshman. No referral. Nothing.
+							We couldn't wait to have a Tesla family working together for a couple weeks. That weekend Jason did this MS150 bike marathon that I drove him to the start line.
+							
+							I still played volleyball the weekend as well and went to the pool with friends and ate PTerry's afterward.
+							
+
+							Hi there! Updating this on October 2024; to hopefully complete this project! So the last time I was writing this was about April 30, 2023. Reading over everything. It is crazy how far everything has come. Working had made me remember after much and important it is to have a community.
+							This was a picture of us after eating at JINYA Ramen Bar in the Domain in Austin. Our laughs and smiles was so pure. <span class="image left"><img src="images/tesla_domainlunch" alt="" /></span>
+							<span class="image right"><img src="images/tesla_volleyball_2.jpg" alt="" /></span>
+							To Be Continued...
+
+							<p>I had the opportunity to learn from engineers that used to work at power plants to building rockets and P.E. licenses. I also had the opportunity to partcipate in multiple speakers events
+									from engineers, recruiters, managers, and board members. I also partcipated in variety of tours and coffee chats 1:1 with some of the interns and full-team to learn more of what is going on outside of my department and it also helped for me 
+									to apply some aspects into my work. I also joined Employee Resource Group (ERG) events and calls. I also feel it is important to learn skills outside and steps out from your comfort zone. I was able to learn a little of controls. As the internship went on, I notcied myself finding problems in the project life cycle, and figured out how 
+							engieners dealt with it. A lot of projects I had felt overwhelmed at first because of looking at the goal. I didn't know where to start. I found out just taking the time to break the projects into key action items steps was useful and being ok to discuss these 
+							steps with your manager or coworkers to make sure you aren't missing something. Afterall you are an intern and you are here to learn. I also noticed that asking questions will be faster most times than trying hours to figure it out with 
+							Tesla's fast turnaround times. Of course -- try to figure it out yourself, but if you notice yourself not making progress. It might be time for you to ask a question. These questions gave me the opportunity to deep dive into finding faster ways to 
+							compelte the project as well. Conclusion, I was able to reduce costs and increase simplication in improvement to a lot of the design based on the specification constraints. I felt that this prepared me a lot for my next role in Tesla.
+							I also learned a bit about material properties for some design and understanding the importance of understanding whole project scope. For example, a smooth property and/or a see-through material based on what is needed for the project.
+							I also found it is best to find and design parts based on wide avaliable parts and limiting the custom parts (if able) like using McMaster-Carr or other sources.
+							It is also important in design to understand how the part is being manufactured and put together to help machinist.	It is also sometimes best to redraw or redesign a part to correct errors in the design. I also got the opportunity to learn of 
+							different flow properties for granular mechanics. I learned a lot through this assignment as it made me realize how much detail the design must have to be manufacturable and accurate to the engineer’s desire. I also 
+							learned designing is one, but manufacturing is another, and mass manufacturing is another process as well. I also learned the value of patience because sometimes design is based on
+						intuition of experience and needs time to learn of the correctness of part designs. For example, choosign the type of a object to fit on a part based on dimension and size and knowing from experience/failures what is best for the project. It is also important
+						to make sure that the design is flushed with each other -- no matter how annoying to fix it might be because tolerance errors as always issues in design to manufacturing.
+						One of my favorite project invovled all my skill set from 2D and 3D space, controls, structural, safety, process design and cross-collaboration with other teams. I also was able to use another excess equipment to use that in the project to save cost and figure out the 
+					the missing information and constraints and what we have to safe cost. I noticed a lot of times when given a project -- the information isn't fully given. You have to ask the right questions to get the right answer.I also employed engineering fundamentals to solve challenging problems throughout the design, 
+					installation, integration, and testing phases of the project.The DEM simulation helped me realize that powder handling is so unique that the simulations can’t 100% accurately portray real life as 
+					size distribution, equipment, velocity, and material properties matter and gave me the opportunity to learn theories and validation testing applied into the project. It 
+					is inspiring to hear, and the co-op reminds me how much I love learning despite the distractions 
+					of grades, career growth, and friends. I saw how valuable a higher 
+					education than my undergraduate degree can help me in my future career as I talked with my 
+					Ph.D. and master’s degree co-worker. The co-op also highlighted and reminded me of why I 
+					became an engineer. I remember how much I love to problem-solve. I also learned to plan on improving by communicating all tasks so that I can
+					compartmentalize my work efforts as there is so many works going on at Tesla. Vivek taught me to laugh and have fun at my job to be myself.</p>
+								<h5>Software Learned and Used</h5>
+								<li>SolidWorks: GD&T practices, BOM, and mechanical design to apply manufacturing principles </li>
+								<li>AutoCAD Plant 3D</li>
+								<li>Bluebeam</li>
+								<li>Revit</li>
+								<li>Welding</li>
+								<li>Excel: VLOOKUP</li>
+								<li>Navisworks</li>
+								<li>ASME Standards</li>
+								<li>DEM (Discrete Element Method)</li>
+								<li>ANSYS</li>
+								<li>Visual Studio: C#, SQLite, LINQ query</li>
+								<li>Project Management</li>
+								
+								<p>Recommand to walk the site to see 2D and 3D model come to life in the space. Understand process five steps ahead and behind. Importance of flexibility in the dimensions of design -- what will change the most and sketch the SolidWorks so won't break.</p>
+
 								<center>
 									<div class="box">
 									<header>
-									<h3>Motto:</h3>
-									<p><center>"You'll never know, unless you go."</center></p>
+									<h3>Elon's Motto:</h3>
+										<li>Make Requirements Less Dumb</li>
+										<li>Delete Process</li>
+										<li>Simplify or Optimize</li>
+										<li>Accelerate Cycle Time</li>
+										<li>Automate</li>
 									</div>
 								</header>
 								</center>
-								
-								<p><span class="image left"><img src="images/formula1.jpg" alt="" /></span>My roommate was Marie, older than me, but young at heart. A future friend that I will be able to cheer Formula 1 and wake up early for different time zones to watch together.</p>	
-								
-								<p>So why was this a year of breaking the status quo? Besides, putting myself into a new environment with international people who I never met until going in the dorm, it is because I started to manufacture parts for Texas Guadaloop, engineering project team that researches how to build an electrically proposed Hyperloop pod that utilizes air-bearing technology to revolutionize modern transportation by revolutionizing technology to change the world.  </p>
-								<h3>Texas Guadaloop: Transition from Business to Suspension</h3>
-								<p><span class="image left"><img src="images/LateNights.jpg" alt="" /></span>I was previously on the business team, and I noticed I felt I was repeating the past from my high school robotics team being on the business team, and making the "excuse" that I won't ever manufacture or learn SolidWorks or code because I felt it is better to benefit the team by my knowledge of business and marketing than focus on myself. 
-										However, I notice the repeative cycle didn't make me as happy as I thought I would be, so I communicated with the Engineering Lead, Trevor, of wanting to switch from business to engineering subsystems.
-										Fast forward months of design and redesigns with the help of my suspension lead, Rohan. I felt the smile in my face of reminding myself that I was chasing my dream and checking off those boxes of wanting to manufacture that I knew high school me would be proud of myself of what I accomplished.  
-									</p>							
-									<p><span class="image right"><img src="images/3DPrinting.jpg" alt="" /></span> </p>							
-									<p>Within four months, I was able to accomplish 3D printing training, Lathe, Manual Mill and SolidWorks that I wanted to accomplish for the past four years. Thank you for the help of TexasInventionWorks at UT and Rohan, Texas Guadaloop's suspension lead for their guidance. 
-									<p>The team has completed Intent to Showcase for European Hyperloop Week that will happen in the Netherlands from July 18-24, 2022.</p>
-									
+								<p>I am already more motivated than ever to learn more about manufacturing 
+									and process design. I also signed up for some mechanical engineering technical elective classes, 
+									so this way I can improve my mechanical engineering skills. The most valuable aspects of this work experience were the interactions with the other 
+									engineers. The talks with the other engineers and asking questions were what really helped me 
+									gain knowledge about the industry and company. My 
+									prior knowledge in mechanical engineering, simulation, and coding was from enrolling in classes 
+									or self-taught. This forced me to learn quickly on the job. However, with the co-op term, I 
+									learned much more about the industry than the other experiences. I was able to build a solid 
+									foundation to increase my self-confidence in decision-making, and it made me realize I still have 
+									much more to learn. I noticed how important general engineering skills like SolidWorks, mass 
+									balances, and basic coding are at the workplace. I also realized that leveraging technology to 
+									solve problems is important as Tesla's mindset is "first-principles" by solving problems through 
+									fundamental simplicities ideas. I want to apply this idea to my academic success in the 
+									classroom. Tesla even peaked my interest to pursue a master’s in mechanical engineering as an 
+									academic goal.  I want to work for a company that falls in line with my 
+									life goal to contribute to something bigger than myself that will change the world for the better 
+									after graduating. I am extremely grateful for the opportunity to co-op in an environment where so 
+									many people are pushing the boundaries of science and engineering. </p>
 									<h2>Coming Up</h2>
 									<div class="row">
 										<div class="col-10 col-12-small">
 
-											<h3>Texas Guadaloop</h3>
+											<h3>End of Tesla Blog</h3>
 											<ul>
-												<li>Manufacture for Suspension</li>
-												<!-- <li>Sagittis lorem eleifend.</li>
-												<li>Felis feugiat dolore viverra.</li> -->
-												<li>European Hyperloop Week</li>
-											</ul> 
-									<a href="https://www.guadaloop.com/">Texas Guadaloop's Website</a></p>					
+												<li>To Be Continued: Blog Ends on April 30, 2023</li>
+											</ul> 				
 .							</section>
 									<header>
 									<p><center>As the picture says:</center></p>
 									<center><header>
-										<h2>"Somos Historia"</h2>
-										<div class="image main"><img src="images/SomosHistoria.jpg" alt="" /></div>
+										<h2>"Living the Dream"</h2>
+										<div class="image main"><img src="images/tesla_headmets.jpg" alt="" /></div>
 									</header></center>
 
 					</div>
@@ -162,6 +770,63 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var slideIndex = {};
+				var slideInterval = {}; // Store interval IDs for each slideshow
+			
+				function showSlides(n, slideshowId) {
+					var i;
+					var slides = document.querySelectorAll(`#${slideshowId} .mySlides`);
+					var dots = document.querySelectorAll(`#${slideshowId} .dot`);
+			
+					if (!slideIndex[slideshowId]) {
+						slideIndex[slideshowId] = 1;
+					}
+			
+					if (n > slides.length) { slideIndex[slideshowId] = 1 }
+					if (n < 1) { slideIndex[slideshowId] = slides.length }
+			
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";
+					}
+			
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+			
+					slides[slideIndex[slideshowId] - 1].style.display = "block";
+					dots[slideIndex[slideshowId] - 1].className += " active";
+				}
+			
+				function plusSlides(n, slideshowId) {
+					showSlides(slideIndex[slideshowId] += n, slideshowId);
+				}
+			
+				function currentSlide(n, slideshowId) {
+					showSlides(slideIndex[slideshowId] = n, slideshowId);
+				}
+			
+				// Automatic slideshow function
+				function startSlideshow(slideshowId, intervalTime) {
+					if (!slideInterval[slideshowId]) {
+						slideInterval[slideshowId] = setInterval(function () {
+							plusSlides(1, slideshowId);
+						}, intervalTime);
+					}
+				}
+			
+				// Call this function for each slideshow on page load, with desired interval time in milliseconds
+				window.onload = function() {
+					startSlideshow('slideshow1', 4000); // Slideshow with ID 'slideshow1' will change every 5 seconds
+					startSlideshow('slideshow2', 4000); // Example for another slideshow
+					startSlideshow('slideshow3', 4000);
+					startSlideshow('slideshow4', 4000);
+					startSlideshow('slideshow5', 4000);
+				};
+			
+			</script>
+			
+				
 
 	</body>
 </html>
