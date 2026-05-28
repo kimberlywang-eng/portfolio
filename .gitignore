@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Windows system files
+desktop.ini
+Thumbs.db
+
+# Archives (not needed in repo)
+*.rar
+*.zip
+
+# Large video/media files that aren't portfolio content
+mixamo_baymax.mp4
+cm-chat-media-video*.mp4
+"cm-chat-media-video*"
+
+# Large 3D animation files (from zip archive, not referenced by portfolio pages)
+animated_t-rex_model_free.glb
+attack_rex_animation.glb
+run_rex_animation.glb
+scream_rex_animation.glb
+t-rex_gltf.glb
+gltf_embedded_*.png
+animated-t-rex-model-free/
+
+# OS files
+.DS_Store

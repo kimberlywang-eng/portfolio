@@ -1,0 +1,736 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kimberly Wang | Associate PM · Walt Disney Imagineering</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Portfolio of Kimberly Wang — Associate Project Manager at Walt Disney Imagineering (Tokyo Disney Resort), 2× Tesla intern, Woven by Toyota (Tokyo), UT Austin BS ChemE (Honors). Open to roles in PM, manufacturing engineering, data, and supply chain." />
+		<meta name="keywords" content="Kimberly Wang, project manager, Disney Imagineering, Tesla, engineering, supply chain, manufacturing, UT Austin" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-NZLH6UST56KJlwhQd6VwNibF+mp7zXqVQGvWFOZoe/0Ta4NwVQ5ZHkGz6hEcAuMDRldD3elNA8H6ccTSS6x9OA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#skills {
+				margin: 2em 0;
+			}
+			.skills-container {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+			}
+			.skill {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.skill label {
+				flex: 1;
+				font-weight: bold;
+			}
+			.progress-bar {
+				flex: 3;
+				background-color: #ddd;
+				border-radius: 10px;
+				overflow: hidden;
+				height: 20px;
+			}
+			.progress {
+				background-color: #4CAF50;
+				height: 100%;
+				text-align: center;
+				color: white;
+				font-size: 12px;
+				line-height: 20px;
+				transition: width 1s ease-in-out;
+			}
+
+			/* Immediate background and centered hero on load */
+			body {
+				background: linear-gradient(135deg, #0e1a31 0%, #1b324d 45%, #2d4a74 100%);
+				color: #ffffff;
+				margin: 0;
+				min-height: 100vh;
+			}
+
+			body.is-preload #banner,
+			#banner {
+				background: none;
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+
+			/* Force immediate rendering and override fade behavior */
+			body.is-preload,
+			#wrapper,
+			.fade-in,
+			#banner,
+			#main,
+			.article,
+			.post {
+				opacity: 1 !important;
+				transform: none !important;
+				transition: none !important;
+			}
+
+			/* Content readability */
+			#main,
+			#main .post,
+			#main .major {
+				background: rgba(255, 255, 255, 0.95) !important;
+				color: #111111 !important;
+				border-radius: 0.8rem;
+				border: 1px solid rgba(255,255,255,0.12);
+			}
+
+			#main p,
+			#main li,
+			#main h1,
+			#main h2,
+			#main h3,
+			#main h4,
+			#main a {
+				color: #111111 !important;
+			}
+
+			#main a:hover,
+			#main .button:hover {
+				color: #ffffff !important;
+				background: #1f98ff !important;
+			}
+
+			#intro .inner {
+				animation: floatIntro 5s ease-in-out infinite;
+			}
+
+			@keyframes floatIntro {
+				0%, 100% { transform: translateY(0px); }
+				50% { transform: translateY(-10px); }
+			}
+
+			.post.featured,
+			.posts article {
+				transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+				border: 1px solid rgba(0, 0, 0, 0.08);
+				border-radius: 0.8rem;
+				background: rgba(255, 255, 255, 0.95);
+			}
+
+			.posts article:hover,
+			.post.featured:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 18px 30px rgba(20, 30, 45, 0.22);
+				border-color: rgba(0, 175, 255, 0.8);
+			}
+
+			#intro .inner {
+				max-width: 960px;
+				padding: 1.8rem;
+				background: rgba(0,0,0,0.42);
+				border-radius: 1rem;
+				box-shadow: 0 24px 45px rgba(0, 0, 0, 0.5);
+				border: 1px solid rgba(255, 255, 255, 0.15);
+			}
+
+			#intro h2 {
+				font-size: clamp(2rem, 4vw, 3rem);
+				margin-bottom: 0.5rem;
+			}
+
+			#intro p {
+				font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+				line-height: 1.5;
+					max-width: 840px;
+					margin: 0 auto;
+				}
+
+				#intro .skill-grid {
+					margin: 1.25rem auto 0;
+					display: flex;
+					flex-wrap: nowrap;
+					justify-content: center;
+					gap: 0.9rem;
+					max-width: 100%;
+					overflow-x: auto;
+					padding-bottom: 0.4rem;
+					-webkit-overflow-scrolling: touch;
+				}
+
+					#intro .skill-card {
+						flex: 0 0 130px;
+						min-width: 100px;
+						max-width: 140px;
+						padding: 1rem 0.9rem;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						gap: 0.5rem;
+						border-radius: 1rem;
+						background: rgba(255, 255, 255, 0.16);
+						border: 1px solid rgba(255, 255, 255, 0.35);
+						backdrop-filter: blur(10px);
+						transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+					}
+				#intro .skill-card i {
+					font-size: 1.55rem;
+					color: #ffffff;
+				}
+
+				#intro .skill-card span {
+					font-size: 0.95rem;
+					font-weight: 700;
+					color: #f1f8ff;
+					text-align: center;
+				}
+
+				#intro .skill-card:hover {
+					transform: translateY(-5px);
+					background: rgba(255, 255, 255, 0.28);
+					border-color: rgba(255, 255, 255, 0.55);
+				}
+
+				#intro .scroll-down {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					margin: 1.8rem auto 0;
+					width: 3rem;
+					height: 3rem;
+					border-radius: 50%;
+					background: rgba(255, 255, 255, 0.18);
+					border: 1px solid rgba(255, 255, 255, 0.45);
+					color: #fff;
+					text-decoration: none;
+					box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+					animation: scrollBounce 1.6s ease-in-out infinite;
+				}
+
+				#intro .scroll-down i {
+					font-size: 1.2rem;
+				}
+
+				@keyframes scrollBounce {
+					0%, 100% { transform: translateY(0); }
+					50% { transform: translateY(8px); }
+				}
+
+				.intro-hook {
+					margin-top: 1.25rem;
+					font-size: 1.05rem;
+					line-height: 1.6;
+					color: #e9f4ff;
+				}
+
+				.intro-hook .button.primary {
+					margin-top: 0.8rem;
+					background: linear-gradient(90deg, #1fb6ff, #2b8ad8);
+					border: 1px solid rgba(255,255,255,0.6);
+					box-shadow: 0 8px 18px rgba(0, 108, 166, 0.35);
+				}
+
+				.intro-hook .button.primary:hover {
+					background: linear-gradient(90deg, #0278d5, #1b5ea7);
+				}
+
+				.timeline-container {
+					position: relative;
+					padding-left: 0;
+					margin-top: 0.8rem;
+					padding: 2rem 0;
+				}
+
+				.timeline-container::before {
+					content: "";
+					position: absolute;
+					left: 50%;
+					top: 0;
+					bottom: 0;
+					width: 4px;
+					background: linear-gradient(180deg, #00a8ff, #005ea7);
+					transform: translateX(-50%);
+					animation: timelineDraw 1.4s ease-out;
+				}
+
+				.timeline-entry {
+					position: relative;
+					margin-bottom: 2.5rem;
+					width: calc(50% - 2rem);
+					padding: 1.25rem;
+					background: rgba(255,255,255,0.98);
+					border-radius: 18px;
+					box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+					transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+					text-decoration: none;
+					color: inherit;
+					cursor: pointer;
+				}
+
+				.timeline-entry:hover {
+					transform: translateY(-6px);
+					box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+					background: #f4fbff;
+					border: 1px solid rgba(0,119,182,0.24);
+				}
+
+				.timeline-entry img {
+					width: 100%;
+					height: 220px;
+					object-fit: cover;
+					border-radius: 12px;
+					margin-top: 0.9rem;
+					box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+				}
+
+				.timeline-entry:nth-child(odd) {
+					margin-left: 0;
+					margin-right: auto;
+					text-align: left;
+				}
+
+				.timeline-entry:nth-child(even) {
+					margin-left: auto;
+					margin-right: 0;
+					text-align: left;
+				}
+
+				.timeline-entry::before {
+					content: "";
+					position: absolute;
+					top: 1rem;
+					width: 16px;
+					height: 16px;
+					border-radius: 50%;
+					background: #fff;
+					border: 4px solid #0077b6;
+					animation: scaleIn 0.6s ease forwards;
+				}
+
+				.timeline-entry:nth-child(odd)::before {
+					right: -10px;
+				}
+
+				.timeline-entry:nth-child(even)::before {
+					left: -10px;
+				}
+
+				@keyframes timelineDraw {
+					0% { height: 0; }
+					100% { height: 100%; }
+				}
+
+				@keyframes scaleIn {
+					0% { transform: scale(0.2); opacity: 0; }
+					100% { transform: scale(1); opacity: 1; }
+				}
+
+			.intro-hook p {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.intro-hook p:before {
+				content: "\f0b2";
+				font-family: "Font Awesome 6 Free";
+				font-weight: 900;
+				color: #4feaff;
+			}
+
+			.intro-hook .button.primary:before {
+				content: none;
+			}
+
+			/* Disable initial fade-in on first render, show background immediately */
+			#wrapper.fade-in,
+			.fade-in {
+				opacity: 1 !important;
+				transform: none !important;
+				transition: none !important;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Banner -->
+				<section id="banner">
+					<div id="intro"> <div class="inner">
+						<h2>Kimberly Wang</h2>
+						<p style="font-size:1.1rem; margin-bottom:0.3rem; font-weight:600; letter-spacing:0.04em;">Associate Project Manager · Walt Disney Imagineering</p>
+						<p style="font-size:0.95rem; opacity:0.85; margin-bottom:0.1rem;">BS Chemical Engineering (Honors) · UT Austin · Computing Certificate</p>
+						<p style="font-size:0.9rem; opacity:0.75;">2× Tesla &nbsp;·&nbsp; Woven by Toyota (Tokyo) &nbsp;·&nbsp; Disney Imagineering</p>
+						<div class="skill-grid">
+							<div class="skill-card">
+								<i class="fab fa-python fa-xl"></i>
+								<span>Python</span>
+							</div>
+							<div class="skill-card">
+								<i class="fas fa-cube fa-xl"></i>
+								<span>SolidWorks</span>
+							</div>
+							<div class="skill-card">
+								<i class="fas fa-tasks fa-xl"></i>
+								<span>Project Mgmt</span>
+							</div>
+							<div class="skill-card">
+								<i class="fas fa-drafting-compass fa-xl"></i>
+								<span>AutoCAD</span>
+							</div>
+							<div class="skill-card">
+								<i class="fas fa-database fa-xl"></i>
+								<span>SQL / Data</span>
+							</div>
+							<div class="skill-card">
+								<i class="fab fa-react fa-xl"></i>
+								<span>React Native</span>
+							</div>
+							<div class="skill-card">
+								<i class="fab fa-figma fa-xl"></i>
+								<span>Figma</span>
+							</div>
+							<div class="skill-card">
+								<i class="fas fa-file-excel fa-xl"></i>
+								<span>Excel</span>
+							</div>
+							<div class="skill-card">
+								<i class="fab fa-adobe fa-xl"></i>
+								<span>Adobe Suite</span>
+							</div>
+							<div class="skill-card">
+								<i class="fab fa-html5 fa-xl"></i>
+								<span>HTML / CSS</span>
+							</div>
+						</div>
+						<div class="intro-hook" style="display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; margin-top:1.1rem;">
+							<a href="aboutme.html" class="button primary">About Me</a>
+							<a href="blogs.html" class="button">My Story</a>
+							<a href="projects.html" class="button">Projects</a>
+						</div>
+						<a href="#main" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+						<!-- <ul class="actions special"> -->
+							<!-- <li><a href="#" class="button primary">Activate</a></li> -->
+						</div>
+					</div>
+					<!-- <a href="#one" class="more scrolly">Learn More</a> -->
+					<!-- Header -->
+					<!-- <header id="header"> -->
+						<!-- <a href="index.html" class="logo">Massively</a> -->
+					</header>
+				</section>
+
+				
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">About</a></li>
+							<li><a href="blogs.html">Blogs</a></li>
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/kimberlywang-eng" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<!-- <span class="date">April 25, 2017</span> -->
+									<h2><a href="aboutme.html">About Me<br />
+									</a></h2>
+									
+								</header> 
+							<div style="display:flex; flex-wrap:wrap; gap:1rem; padding:1rem; border-radius:18px; background: linear-gradient(135deg, rgba(0,119,182,0.13), rgba(255,255,255,0.92)); box-shadow:0 10px 20px rgba(0,0,0,0.08);">
+								<div style="flex:1 1 260px; min-width:260px; border:2px solid #0077b6; border-radius:16px; padding:1rem; background:#fff;">
+									<h2 style="margin-top:0;">👋 Hi, I’m Kimberly</h2>
+									<div style="margin-bottom:1rem; border:1px dashed #a8d6ff; border-radius:12px; padding:0.8rem; background:#f7fbff;">
+										<h3 style="margin:0 0 0.6rem;">🚀 Snapshot</h3>
+										<img src="images/profile.jpg" alt="Kimberly" style="width:120px; height:120px; border-radius:50%; border:2px solid #0077b6; box-shadow:0 4px 8px rgba(0,0,0,0.15); float:left; margin-right:1rem; margin-bottom:0.5rem; object-fit: cover;" />
+										<p style="margin:0.2rem 0; font-size:0.92rem;">10+ yrs leading engineering/PM integration in high-impact innovation pipelines.</p>
+										<p style="margin:0.2rem 0; font-size:0.92rem;">2x Tesla + Woven by Toyota + Disney Imagineering.</p>
+										<p style="margin:0.2rem 0; font-size:0.92rem;">UT Austin honors thesis; Texas Guadaloop president; global systems focus.</p>
+										<div style="margin-top:0.75rem; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:0.4rem;">
+											<div style="background:#e6f5ff; border-radius:8px; padding:0.45rem; font-size:0.85rem;">🏗️ Manufacturing + automation</div>
+											<div style="background:#ffe8e9; border-radius:8px; padding:0.45rem; font-size:0.85rem;">🤖 AI-driven process optimization</div>
+											<div style="background:#e8ffe7; border-radius:8px; padding:0.45rem; font-size:0.85rem;">🎯 Cross-disciplinary systems teams</div>
+											<div style="background:#fffde7; border-radius:8px; padding:0.45rem; font-size:0.85rem;">🌍 Global R&D & field deployment</div>
+										</div>
+									</div>
+									<p style="margin:0.3rem 0; font-weight:700; color:#004a7c;">EXPERIENCE</p>
+									<div class="timeline-container">
+							<div class="timeline-entry" onclick="window.location.href='blogs - Disney.html'" title="Read the Disney Imagineering blog post">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-magic" style="color:#0077b6; margin-right:0.5rem;"></i>Walt Disney Imagineering</div>
+											<div style="font-size:0.9rem; color:#555; margin-top:0.3rem;">Associate Project Manager</div>
+											<div style="font-size:0.9rem; color:#555;">Glendale, CA</div>
+											<div style="font-size:0.9rem; color:#555;">Feb 2026 – Present</div>
+									<img src="images/disney_full-time_family.jpg" alt="Disney full-time family" />
+										</div>
+								<div class="timeline-entry" onclick="window.location.href='blogs - Disney.html'" title="Read the Disney Imagineering blog post">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-magic" style="color:#0077b6; margin-right:0.5rem;"></i>Walt Disney Imagineering</div>
+											<div style="font-size:0.9rem; color:#555; margin-top:0.3rem;">Project Management Intern</div>
+											<div style="font-size:0.9rem; color:#555;">Glendale, CA</div>
+											<div style="font-size:0.9rem; color:#555;">Jan 2025 – Feb 2026</div>
+								<img src="images/disney_intern_front.jpeg" alt="Disney intern front" />
+										</div>
+								<div class="timeline-entry" onclick="window.location.href='blogs -Internship_Japan.html'" title="Read the internship abroad blog post">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-robot" style="color:#0077b6; margin-right:0.5rem;"></i>Woven by Toyota</div>
+											<div style="font-size:0.9rem; color:#555; margin-top:0.3rem;">Systems Engineering Intern</div>
+											<div style="font-size:0.9rem; color:#555;">Tokyo, Japan</div>
+											<div style="font-size:0.9rem; color:#555;">Jun 2024 – Aug 2024</div>
+									<img src="images/japan_toyotaracing.jpg" alt="Woven by Toyota racing" />
+										</div>
+								<div class="timeline-entry" onclick="window.location.href='blogs -Tesla.html'" title="Read the Tesla blog post">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-car" style="color:#0077b6; margin-right:0.5rem;"></i>Tesla</div>
+											<div style="font-size:0.9rem; color:#555; margin-top:0.3rem;">Material Flow Automation Engineering Intern</div>
+											<div style="font-size:0.9rem; color:#555;">Austin, TX</div>
+											<div style="font-size:0.9rem; color:#555;">Jun 2023 – Aug 2023</div>
+									<img src="images/tesla_cyber.jpg" alt="Tesla cyber" />
+										</div>
+								<div class="timeline-entry" onclick="window.location.href='blogs -Tesla.html'" title="Read the Tesla blog post">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-car" style="color:#0077b6; margin-right:0.5rem;"></i>Tesla</div>
+											<div style="font-size:0.9rem; color:#555; margin-top:0.3rem;">Manufacturing Engineering Intern</div>
+											<div style="font-size:0.9rem; color:#555;">Austin, TX</div>
+											<div style="font-size:0.9rem; color:#555;">Jan 2023 – Jun 2023</div>
+									<img src="images/tesla_four models.jpg" alt="Tesla four models" />
+										</div>
+								<div class="timeline-entry" onclick="window.location.href='blogs - President of Texas Guadaloop.html'" title="Read the Texas Guadaloop blog post">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-rocket" style="color:#0077b6; margin-right:0.5rem;"></i>Texas Guadaloop (President)</div>
+											<div style="font-size:0.9rem; color:#555;">Austin, TX</div>
+											<div style="font-size:0.9rem; color:#555;">Mar 2023 – Sep 2024</div>
+									<img src="images/prez_tg_teamphoto.jpg" alt="Texas Guadaloop president team" />
+
+										</div>
+							<div class="timeline-entry" onclick="window.location.href='projects.html'" title="Visit projects for additional work">
+											<div style="font-weight:700; color:#003f7f;"><i class="fas fa-graduation-cap" style="color:#0077b6; margin-right:0.5rem;"></i>Additional Experiences</div>
+											<ul style="margin-top:0.4rem; color:#333; font-size:0.9rem; padding-left:1rem;">
+												<li>App/Web dev projects with Google Auth</li>
+												<li>Zustand</li>
+												<li>TanStack Query</li>
+												<li>Appwrite backend</li>
+											</ul>
+											<ul style="color:#333; font-size:0.9rem; padding-left:1rem;">
+												<li>UT Austin research programs</li>
+												<li>Innovation labs</li>
+												<li>IT teaching assistant work</li>
+									</ul>
+									<img src="images/baymax-code.jpg" alt="Baymax code" />
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<ul class="actions special">
+								<li><a href="aboutme.html" class="button large">Read more</a></li>
+							</ul>
+							</header>
+							</article>
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">January 2025 – Present</span>
+										<h2><a href="blogs - Disney.html">Walt Disney Imagineering:<br />
+										Making the Impossible Possible</a></h2>
+									</header>
+									<a href="blogs - Disney.html" class="image fit">
+										<img src="images/disney_intern_front.jpeg" alt="Walt Disney Imagineering" style="width: 400px; height: 300px; object-fit: cover;" />
+									</a>
+									<p>From PM intern at Disneyland to Associate Project Manager on Tokyo Disney Resort projects — the role I once thought was out of reach, and how every step before it was preparation.</p>
+									<ul class="actions special">
+										<li><a href="blogs - Disney.html" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">June – August 2024</span>
+										<h2><a href="blogs -Internship_Japan.html">Summer 2024:<br />
+										An Internship Abroad: Tokyo, Japan</a></h2>
+									</header>
+									<a href="blogs -Internship_Japan.html" class="image fit">
+										<img src="images/japan_toyotaracing.jpg" alt="Woven by Toyota" style="width: 400px; height: 300px; object-fit: cover;" />
+									</a>
+									<p>I thought studying abroad in Denmark was my big international chapter. Then Woven by Toyota offered me a Systems Engineering internship in Tokyo — and I learned what resilience actually means.</p>
+									<ul class="actions special">
+										<li><a href="blogs -Internship_Japan.html" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">March 2023 – September 2024</span>
+										<h2><a href="blogs - President of Texas Guadaloop.html">Mentee to Mentor:<br />
+										President of Texas Guadaloop</a></h2>
+									</header>
+									<a href="blogs - President of Texas Guadaloop.html" class="image fit">
+										<img src="images/prez_tg_teamphoto.jpg" alt="Texas Guadaloop" style="width: 400px; height: 300px; object-fit: cover;" />
+									</a>
+									<p>From new member to president — raising $33,000, presenting to the Dean and stakeholders, and learning what leadership looks like under real pressure.</p>
+									<ul class="actions special">
+										<li><a href="blogs - President of Texas Guadaloop.html" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">January – August 2023</span>
+										<h2><a href="blogs -Tesla.html">Spring &amp; Summer 2023:<br />
+										8 Months at Tesla</a></h2>
+									</header>
+									<a href="blogs -Tesla.html" class="image fit">
+										<img src="images/tesla_cyber.jpg" alt="Tesla Gigafactory" style="width: 400px; height: 300px; object-fit: cover;" />
+									</a>
+									<p>My first internship, at one of my dream companies — how I got in, what eight months at Gigafactory Texas taught me, and why I transferred to a second team before the summer ended.</p>
+									<ul class="actions special">
+										<li><a href="blogs -Tesla.html" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<!-- <article>
+									<header>
+										<span class="date">April 18, 2017</span>
+										<h2><a href="#">Ante mattis<br />
+										interdum dolor</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article> -->
+							</section>
+							<!-- Fun Facts Section -->
+							<section id="fun-facts">
+								<h2>Fun Facts About Me</h2>
+								<ul class="fun-facts-list">
+									<li class="fun-fact">🌍 I've traveled to 9 countries and counting! My first international experience was studying abroad in Denmark!</li>
+									<li class="fun-fact">💻 This website was built after taking my first coding class during a break to apply my knowledge.</li>
+									<li class="fun-fact">🚀 I have led my team to design hyperloop pods for global competitions!</li>
+									<li class="fun-fact">🔬 I worked in multiple research labs, exploring everything from nanocrystals to ionic liquid robots to graphene biosensors!</li>
+									<li class="fun-fact">🏎️ I've interned at Tesla and Woven by Toyota and Walt Disney Imagineering!</li>
+									<li class="fun-fact">⚙️ I was a recipient of the Mercedes AMG High-Performance Powertrains Engineering Programme Workshop!</li>
+									<li class="fun-fact">🧩 My passion thrives on innovation, constantly looking for ways to make the impossible possible!</li>
+									<li class="fun-fact">🌟 I love to mentor people in various ways: as an undergraduate teaching assistant, PEER mentor, and president of Texas Guadaloop!</li>
+								</ul>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<p>Los Angeles, CA</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:kimberly.d.wang01@gmail.com">kimberly.d.wang01@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/kimberlywang-eng" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<!-- <ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul> -->
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				$(document).ready(function() {
+					var animated = false;
+					$(window).scroll(function() {
+						var skillsTop = $('#skills').offset().top;
+						var windowBottom = $(window).scrollTop() + $(window).height();
+						if (windowBottom > skillsTop && !animated) {
+							$('.progress').each(function() {
+								var width = $(this).css('width');
+								$(this).css('width', '0%');
+								$(this).animate({width: width}, 1000);
+							});
+							animated = true;
+						}
+					});
+					
+					// Back to top button
+					$(window).scroll(function() {
+						if ($(this).scrollTop() > 100) {
+							$('#back-to-top').fadeIn();
+						} else {
+							$('#back-to-top').fadeOut();
+						}
+					});
+					$('#back-to-top').click(function() {
+						$('html, body').animate({scrollTop: 0}, 800);
+						return false;
+					});
+				});
+			</script>
+			<a id="back-to-top" href="#" style="position: fixed; bottom: 20px; right: 20px; display: none; background: #4CAF50; color: white; padding: 10px; border-radius: 50%; text-decoration: none;">↑</a>
+
+	</body>
+</html>
