@@ -137,7 +137,44 @@
 					width: 1.2rem;
 					height: 1.2rem;
 				}
-			</style>	</head>
+
+				.project-grid {
+					display: grid;
+					grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+					gap: 1.6rem;
+					margin: 2rem 0 1.25rem;
+				}
+
+				.project-card {
+					background: #fff;
+					border-radius: 14px;
+					border: 1px solid rgba(0, 90, 148, 0.12);
+					box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+					overflow: hidden;
+					transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+					display: flex;
+					flex-direction: column;
+				}
+
+				.project-card:hover {
+					transform: translateY(-6px);
+					box-shadow: 0 14px 28px rgba(0, 90, 148, 0.18);
+					border-color: rgba(0, 119, 182, 0.4);
+				}
+
+				.project-filter-btn.active {
+					background: #0077b6;
+					color: #fff;
+					box-shadow: 0 6px 16px rgba(0, 119, 182, 0.3);
+				}
+
+				.project-filter-btn:hover:not(.active) {
+					background: #d4ecff;
+					transform: translateY(-2px);
+				}
+			</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -166,18 +203,14 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1>Projects Page<br />
-									</h1>
+									<h1>My Projects</h1>
+									<p>A visual collection of engineering, software, and design work — spanning CAD, data analysis, mobile apps, and beyond.</p>
 								</header>
 
 									<hr />
-							
-
-								<!-- Table -->
-									<!-- <h2>Table</h2> -->
 
 									<h3>Featured Projects</h3>
-					<p class="subheading">Explore a visual collection of featured work. Use the buttons below to filter by category or skill, for example Kaggle.</p>
+					<p>Use the buttons below to filter by category.</p>
 					<div class="project-controls">
 						<button type="button" class="project-filter-btn active" data-filter="all">All Projects</button>
 						<button type="button" class="project-filter-btn" data-filter="personal">Personal</button>
@@ -329,13 +362,13 @@
 							</article>
 						</div>
 
-						<p><strong><em>**Note: All projects must have permission prior to personal use.</em></strong></p>
+						<p><em>Note: All projects are shared for portfolio purposes. Please reach out before reusing any work.</em></p>
 
 									<hr />
 
 								<!-- Contact Form -->
 									<h2>Get in Touch</h2>
-									<p>Want to collaborate, use a project, or just reach out? Fill out the form below.</p>
+									<p>Want to collaborate, ask about a project, or discuss an opportunity? Fill out the form below.</p>
 
 									<!-- <form method="post" action="https://kimberlywang-eng.github.io/portfolio/projects.php"> -->
 									<form action="https://formsubmit.co/185cb31bdd7d0e393c3ec5bffeccdc9c" method="POST">
@@ -364,22 +397,18 @@
 											<!-- Break -->
 											<div class="col-12">
 												<select name="Reason" id="demo-category">
-													<option value="">- Reason for Use of Project -</option>
+													<option value="">- Reason for Reaching Out -</option>
+													<option value="Recruiting">Recruiting / Job Inquiry</option>
+													<option value="Collaboration">Collaboration</option>
+													<option value="Business">Business / Professional</option>
+													<option value="School">Academic / School</option>
 													<option value="Personal">Personal</option>
-													<option value="School">School</option>
-													<option value="Business">Business</option>
-													<!-- <option value="1">Human Resources</option> -->
 												</select>
 											</div>
 											<!-- Break -->
 											<div class="col-6 col-12-small">
 												<input type="checkbox" id="demo-copy" name="Copy">
-												
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="col-6 col-12-small">
-												<input type="checkbox" id="demo-human" name="I&nbsp;am&nbsp;a&nbsp;human" checked>
-												<label for="demo-human">I am a human</label>
+												<label for="demo-copy">Send me a copy</label>
 											</div>
 											<!-- Break -->
 											<div class="col-12">
@@ -430,9 +459,8 @@
 						</section> -->
 						<section class="split contact">
 							<section class="alt">
-								<h3>Address</h3>
-								<p><br />
-								Los Angeles, CA</p>
+								<h3>Location</h3>
+								<p>Los Angeles, CA</p>
 							</section>
 							<!-- <section>
 								<h3>Phone</h3>
