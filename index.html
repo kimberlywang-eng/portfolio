@@ -355,9 +355,30 @@
 				transform: none !important;
 				transition: none !important;
 			}
+		/* Allow keyframe animations to run immediately, overriding main.css's
+		   body.is-preload * { animation: none !important } rule */
+		body.is-preload #intro .inner {
+			animation: floatIntro 5s ease-in-out infinite !important;
+		}
+		body.is-preload #intro .scroll-down {
+			animation: scrollBounce 1.6s ease-in-out infinite !important;
+		}
+		body.is-preload .timeline-container::before {
+			animation: timelineDraw 1.4s ease-out !important;
+		}
+		body.is-preload .timeline-entry::before {
+			animation: scaleIn 0.6s ease forwards !important;
+		}
 		</style>
 	</head>
 	<body class="is-preload">
+	<script>
+		/* Remove is-preload at DOM ready so CSS animations start immediately,
+		   not after all network resources finish loading (window.load). */
+		document.addEventListener('DOMContentLoaded', function() {
+			document.body.classList.remove('is-preload', 'is-loading');
+		});
+	</script>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
