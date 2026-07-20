@@ -1,27 +1,37 @@
 # Dependencies
 node_modules/
+.pnp
+.pnp.js
 
-# Windows system files
-desktop.ini
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Environment variables
+.env
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.DS_Store
 Thumbs.db
+desktop.ini
+.vscode/
+.idea/
 
-# Archives (not needed in repo)
+# Archives — never belong in the repo
 *.rar
 *.zip
-
-# Large video/media files that aren't portfolio content
-mixamo_baymax.mp4
-cm-chat-media-video*.mp4
-"cm-chat-media-video*"
-
-# Large 3D animation files (from zip archive, not referenced by portfolio pages)
-animated_t-rex_model_free.glb
-attack_rex_animation.glb
-run_rex_animation.glb
-scream_rex_animation.glb
-t-rex_gltf.glb
-gltf_embedded_*.png
-animated-t-rex-model-free/
-
-# OS files
-.DS_Store

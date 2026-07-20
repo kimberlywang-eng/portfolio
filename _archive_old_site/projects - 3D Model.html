@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>3D Model Viewer | Kimberly Wang</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Interactive 3D T-Rex dinosaur viewer built with model-viewer and Three.js. Switch between animations: bite, run, and roar." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <style>
+        .viewer-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        model-viewer {
+            width: 100%;
+            max-width: 900px;
+            height: 540px;
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+            border: 2px solid rgba(0, 119, 182, 0.18);
+            background: #0e1a31;
+        }
+
+        .anim-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            justify-content: center;
+        }
+
+        .anim-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 999px;
+            border: 2px solid #0077b6;
+            background: #eef7ff;
+            color: #004a7c;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .anim-btn:hover,
+        .anim-btn.active {
+            background: #0077b6;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.35);
+        }
+
+        .speed-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .speed-row label {
+            font-weight: 600;
+            color: #003f7f;
+            min-width: 7rem;
+        }
+
+        #animationSpeedSlider {
+            width: clamp(180px, 40vw, 320px);
+            accent-color: #0077b6;
+        }
+
+        #speedDisplay {
+            min-width: 3rem;
+            font-weight: 700;
+            color: #0077b6;
+        }
+
+        .credit-note {
+            font-size: 0.78rem;
+            color: #667;
+            text-align: center;
+            max-width: 700px;
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header"></header>
+
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li class="active"><a href="projects.html">Projects</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/kimberlywang-eng" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <section class="post">
+                <header class="major">
+                    <h1>T-Rex ALIVE!</h1>
+                    <p>An interactive 3D dinosaur built with <code>model-viewer</code> and Three.js.<br />
+                    Switch animations and control playback speed below.</p>
+                </header>
+                <hr />
+
+                <div class="viewer-wrapper">
+                    <model-viewer
+                        id="myModelViewer"
+                        src="animated_t-rex_model_free.glb"
+                        camera-orbit="25deg 95deg 16m"
+                        camera-controls
+                        autoplay
+                        environment-image="JurassicPark.jpg"
+                        shadow-intensity="2"
+                        shadow-softness="1"
+                        alt="Animated T-Rex 3D model">
+                    </model-viewer>
+
+                    <div class="anim-controls">
+                        <button class="anim-btn active" onclick="changeAnimation('animated_t-rex_model_free.glb', this)">
+                            <i class="fas fa-walking"></i> Idle
+                        </button>
+                        <button class="anim-btn" onclick="changeAnimation('run_rex_animation.glb', this)">
+                            <i class="fas fa-running"></i> Run
+                        </button>
+                        <button class="anim-btn" onclick="changeAnimation('attack_rex_animation.glb', this)">
+                            <i class="fas fa-tooth"></i> Bite
+                        </button>
+                        <button class="anim-btn" onclick="changeAnimation('scream_rex_animation.glb', this)">
+                            <i class="fas fa-volume-up"></i> Roar
+                        </button>
+                    </div>
+
+                    <div class="speed-row">
+                        <label for="animationSpeedSlider"><i class="fas fa-tachometer-alt"></i> Speed</label>
+                        <input type="range" id="animationSpeedSlider" min="0.25" max="3.0" step="0.05" value="1.0" />
+                        <span id="speedDisplay">1.0×</span>
+                    </div>
+
+                    <p class="credit-note">
+                        "Animated T-Rex Model (free)" by ulunkwulunk is licensed under
+                        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0</a>.
+                    </p>
+                </div>
+
+                <hr />
+                <p style="text-align:center;">
+                    <a href="projects - 3D Model Design.html" class="button">Read the Design Process</a>
+                    &nbsp;
+                    <a href="projects.html" class="button">Back to Projects</a>
+                </p>
+            </section>
+        </div>
+
+        <footer id="footer">
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Location</h3>
+                    <p>Los Angeles, CA</p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:kimberly.d.wang01@gmail.com">kimberly.d.wang01@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/kimberlywang-eng" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <div id="copyright"></div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        const viewer = document.getElementById('myModelViewer');
+        const slider = document.getElementById('animationSpeedSlider');
+        const speedDisplay = document.getElementById('speedDisplay');
+
+        slider.addEventListener('input', () => {
+            const rate = parseFloat(slider.value);
+            viewer.animationPlaybackRate = rate;
+            speedDisplay.textContent = rate.toFixed(2) + '×';
+        });
+
+        function changeAnimation(modelFile, btn) {
+            // Switch the model source — each .glb contains its own embedded animation
+            viewer.src = modelFile;
+            viewer.animationPlaybackRate = parseFloat(slider.value);
+
+            // Update active button state
+            document.querySelectorAll('.anim-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>

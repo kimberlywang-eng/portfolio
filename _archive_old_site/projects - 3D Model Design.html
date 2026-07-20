@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>3D Model Design Process | Kimberly Wang</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Kimberly Wang's design process for building an interactive 3D animated model viewer using Three.js, model-viewer, and Mixamo." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .caption-center {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #555;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+        <header id="header"></header>
+
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li class="active"><a href="projects.html">Projects</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/kimberlywang-eng" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <section class="post">
+                <header class="major">
+                    <span class="date">March 21 – June 13, 2023</span>
+                    <h1>3D Model Design Process</h1>
+                    <p>How I built an interactive animated dinosaur in the browser — from zero Three.js knowledge to a live T-Rex with switchable animations.</p>
+                </header>
+
+                <hr />
+
+                <h2>Purpose</h2>
+                <blockquote>
+                    Let the user load a 3D model in the browser and interactively switch between animations using <code>model-viewer</code> as the rendering layer.
+                </blockquote>
+
+                <hr />
+
+                <h2>Design Process</h2>
+                <div class="box">
+                    <p>
+                        During my internship at Tesla, one of my coworkers suggested adding 3D modeling to my portfolio website.
+                        Balancing work, research, and Texas Guadaloop during the day meant I didn't get to start until Spring Break —
+                        but I finally sat down and built it. Here's the story of how it came together.
+                    </p>
+
+                    <h3>Overview</h3>
+                    <p><strong>Goal:</strong> Embed a 3D animated model into a webpage that users can interact with.</p>
+                    <ol>
+                        <span class="image right"><img src="images/baymax-code.jpg" alt="Baymax code screenshot" /></span>
+                        <li>Learn Three.js — understand how it handles animation and UI rendering.</li>
+                        <li>Find a free 3D model to practice with.</li>
+                        <li>Embed the model on the website.</li>
+                        <li>Add animations and interactive controls.</li>
+                    </ol>
+
+                    <hr />
+
+                    <h3>Day 1 — Learning Three.js <span style="font-weight:400; font-size:0.9rem;">(March 21, 2023)</span></h3>
+                    <ul>
+                        <li>Set up Three.js by installing Node.js and npm.</li>
+                        <li><strong>Note:</strong> Restart VS Code after installing Node.js, or the environment variables won't load.</li>
+                    </ul>
+                    <p><strong>Challenge:</strong> Three.js wasn't rendering anything.</p>
+                    <p>
+                        The <code>&lt;script&gt;</code> tag wasn't loading the module correctly.
+                        The viewport showed a black placeholder where the animation should have been.
+                        I adjusted the lighting and camera settings — neither fixed it.
+                        Eventually, I realized other JS files in the page were conflicting with Three.js's module loading.
+                    </p>
+
+                    <hr />
+
+                    <h3>Day 2 — Switching Approaches <span style="font-weight:400; font-size:0.9rem;">(June 12, 2023)</span></h3>
+                    <ul>
+                        <span class="image right"><img src="images/wall-e proto.jpg" alt="Wall-E prototype" /></span>
+                        <li>Discovered <code>model-viewer</code> — a Google web component purpose-built for 3D in the browser.</li>
+                        <li>Started hunting for a free <code>.glb</code> file to test with.</li>
+                    </ul>
+                    <p>
+                        My first attempts didn't go smoothly: the Baymax model I found had too many subfolders and
+                        a complex skin that <code>model-viewer</code> couldn't resolve. I converted a Wall-E <code>.rar</code> file,
+                        then found a <code>.glb</code> version — but it was too large to load. I eventually found a smaller Wall-E file that worked.
+                    </p>
+                    <p class="caption-center">The Wall-E was my first working animated 3D model on this website!</p>
+                    <p><strong>Challenges:</strong></p>
+                    <ul>
+                        <li><code>model-viewer</code> only supports <code>.glb</code> files.</li>
+                        <li>Baymax's subfolder structure broke the skin rendering.</li>
+                        <li>The full Wall-E file size exceeded the GitHub push limit.</li>
+                    </ul>
+
+                    <hr />
+
+                    <h3>Day 3 — Let's Animate! <span style="font-weight:400; font-size:0.9rem;">(June 13, 2023)</span></h3>
+                    <span class="image left"><img src="images/mixamo_skeleton.png" alt="Mixamo skeleton rigging" /></span>
+                    <p>
+                        After getting the static model working, I wanted animations. A quick search led me to Mixamo —
+                        an animation tool that lets you rig and animate 3D models. The catch: Mixamo accepts <code>.fbx</code>, <code>.obj</code>, and <code>.zip</code>,
+                        but <code>model-viewer</code> requires <code>.glb</code>. That meant converting between formats at each step.
+                    </p>
+                    <ul>
+                        <span class="image right"><img src="images/mixamo_baymax.png" alt="Mixamo Baymax animation" /></span>
+                        <li>Found a pre-animated T-Rex model in <code>.glb</code> format — bypassing the Mixamo conversion entirely.</li>
+                        <li>Added animation buttons so users can switch between Bite, Run, and Roar in real time.</li>
+                        <li>Added a speed slider to control playback rate.</li>
+                    </ul>
+                    <p>
+                        One late-night bug cost me 30 minutes: I'd removed the <code>environment-image</code> property when pushing to GitHub
+                        to reduce file size — and the dinosaur went completely black. Turns out that image was providing the PBR lighting
+                        that made the texture visible. It was 4:04 AM when I finally figured it out.
+                    </p>
+                    <p><strong>Challenge:</strong> <code>model-viewer</code> can only animate a model if the animation is already baked into the <code>.glb</code> file. Solution: use separate <code>.glb</code> files per animation and swap the <code>src</code> attribute on button click.</p>
+
+                    <center>
+                        <video width="720" height="440" controls style="border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.18); max-width:100%;">
+                            <source src="mixamo_baymax.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption-center">Early prototype — Baymax animation test in the browser.</p>
+                    </center>
+
+                    <hr />
+
+                    <h3>Skills Gained</h3>
+                    <ul>
+                        <li>3D model rendering in the browser using <code>model-viewer</code> and Three.js</li>
+                        <li>Animating and rigging 3D models with Mixamo</li>
+                        <li>File format pipelines: <code>.fbx</code> → <code>.obj</code> → <code>.glb</code></li>
+                        <li>Dynamic DOM manipulation to swap 3D model sources on user interaction</li>
+                    </ul>
+
+                    <h3>What's Next</h3>
+                    <ul>
+                        <li>Create and rig my own original 3D model end-to-end.</li>
+                        <li>Fix the skin texture issue — the PBR material data is present but not rendering correctly in all environments.</li>
+                        <li>Add more meaningful speed range control for slower/faster animation modes.</li>
+                    </ul>
+
+                    <h3>Overall Thoughts</h3>
+                    <p>
+                        I've always loved creating, exploring, and pushing ideas into something real. Getting a suggestion from a coworker at Tesla
+                        and turning it into a live interactive model on my website — that's exactly the kind of challenge I gravitate toward.
+                        The key lesson from this project: break big ambitions into small, testable steps.
+                        Day 1 was just "can I load a model?" Day 2 was "can I load the right model?" Day 3 was "can I make it move?"
+                        Each step unlocked the next.
+                    </p>
+                    <span class="image fit"><img src="images/t-rex proto.jpg" alt="T-Rex prototype render" /></span>
+                    <p class="caption-center">Moral of the story: coffee, patience, and good documentation go a long way at 4 AM.</p>
+                </div>
+
+                <hr />
+                <p style="text-align:center;">
+                    <a href="projects - 3D Model.html" class="button primary">See the Live Model</a>
+                    &nbsp;
+                    <a href="projects.html" class="button">Back to Projects</a>
+                </p>
+            </section>
+        </div>
+
+        <footer id="footer">
+            <section class="split contact">
+                <section class="alt">
+                    <h3>Location</h3>
+                    <p>Los Angeles, CA</p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:kimberly.d.wang01@gmail.com">kimberly.d.wang01@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/kimberly-wang-2253751aa/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/kimberlywang-eng" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <div id="copyright"></div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
