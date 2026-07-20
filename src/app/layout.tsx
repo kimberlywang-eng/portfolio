@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swa
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kimberlywang-eng.github.io'),
+  metadataBase: new URL('https://kimberlywang.vercel.app'),
   title: {
     default: `${site.name} | ${site.role}`,
     template: `%s | ${site.name}`,
@@ -31,7 +31,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} | ${site.role}`,
     description: site.tagline,
+    url: 'https://kimberlywang.vercel.app',
+    siteName: site.name,
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${site.name} | ${site.role}`,
+    description: site.tagline,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

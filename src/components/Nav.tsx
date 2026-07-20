@@ -115,6 +115,16 @@ export default function Nav() {
             <a href={site.linkedin} target="_blank" rel="noreferrer" className="text-ink-muted">
               <Linkedin size={18} />
             </a>
+            {site.resumeHref && (
+              <a
+                href={site.resumeHref}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-ink-muted hover:text-ink transition-colors"
+              >
+                Resume
+              </a>
+            )}
           </div>
         </div>
       )}

@@ -87,7 +87,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <input type="hidden" name="_subject" value="New message from kimberlywang.dev" />
+      <input type="hidden" name="_subject" value="New message from kimberlywang.vercel.app" />
 
       <button
         type="submit"
