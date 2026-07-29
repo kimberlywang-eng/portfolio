@@ -5,21 +5,76 @@
 :root {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* --- Dark theme (default) --- */
+  /* RGB triplets (no `rgb()` wrapper) so Tailwind's <alpha-value> opacity
+     modifiers work, e.g. bg-bg/80 or text-accent/50. */
+  --color-bg: 5 7 13;
+  --color-bg-soft: 10 14 24;
+  --color-bg-card: 13 18 30;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-soft: rgba(255, 255, 255, 0.14);
+  --color-accent: 94 234 212;
+  --color-accent-blue: 96 165 250;
+  --color-accent-violet: 167 139 250;
+  --color-accent-pink: 244 114 182;
+  --color-ink: 230 233 242;
+  --color-ink-muted: 139 147 167;
+  --color-ink-faint: 91 101 121;
+
+  --scrollbar-track: #05070d;
+  --scrollbar-thumb: #1b2333;
+  --scrollbar-thumb-hover: #2a3550;
+  --selection-bg: rgba(94, 234, 212, 0.25);
+  --selection-fg: #e6e9f2;
+  --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+/* --- Light theme --- */
+html.light {
+  --color-bg: 247 248 251;
+  --color-bg-soft: 237 240 245;
+  --color-bg-card: 255 255 255;
+  --color-border: rgba(15, 23, 42, 0.09);
+  --color-border-soft: rgba(15, 23, 42, 0.16);
+  --color-accent: 13 148 136;
+  --color-accent-blue: 37 99 235;
+  --color-accent-violet: 124 58 237;
+  --color-accent-pink: 219 39 119;
+  --color-ink: 15 23 42;
+  --color-ink-muted: 71 85 105;
+  --color-ink-faint: 100 116 139;
+
+  --scrollbar-track: #f1f2f6;
+  --scrollbar-thumb: #cbd2e0;
+  --scrollbar-thumb-hover: #aab3c8;
+  --selection-bg: rgba(13, 148, 136, 0.18);
+  --selection-fg: #0f172a;
+  --grid-line: rgba(15, 23, 42, 0.045);
 }
 
 * {
   scroll-behavior: smooth;
 }
 
+html {
+  color-scheme: dark;
+}
+html.light {
+  color-scheme: light;
+}
+
 body {
   @apply bg-bg text-ink antialiased;
-  background-image: theme('backgroundImage.grid-pattern');
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: theme('backgroundSize.grid');
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
-  background: rgba(94, 234, 212, 0.25);
-  color: #e6e9f2;
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 /* Custom scrollbar */
@@ -27,14 +82,14 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #05070d;
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1b2333;
+  background: var(--scrollbar-thumb);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3550;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Custom cursor — hidden on touch devices */
@@ -56,7 +111,12 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #5eead4, #60a5fa, #a78bfa);
+  background: linear-gradient(
+    90deg,
+    rgb(var(--color-accent)),
+    rgb(var(--color-accent-blue)),
+    rgb(var(--color-accent-violet))
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

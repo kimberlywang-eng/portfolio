@@ -24,8 +24,15 @@ export default function AboutPage() {
     <div className="py-16 md:py-24">
       <Reveal>
         <div className="flex flex-col md:flex-row gap-8 items-start mb-14">
-          <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-2xl overflow-hidden border border-border shrink-0">
-            <Image src="/images/profile.jpg" alt="Kimberly Wang" fill className="object-cover" />
+          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-border shrink-0">
+            <Image
+              src="/images/profile.jpg"
+              alt="Kimberly Wang smiling at Nyhavn in Copenhagen, Denmark"
+              fill
+              sizes="(min-width: 768px) 160px, 128px"
+              className="object-cover"
+              priority
+            />
           </div>
           <div>
             <p className="font-mono text-xs text-accent mb-2">about</p>
@@ -40,7 +47,7 @@ export default function AboutPage() {
               {STATS.map((s) => (
                 <span
                   key={s}
-                  className="rounded-full border border-border bg-white/5 px-3 py-1.5 text-xs text-ink-muted"
+                  className="rounded-full border border-border bg-bg-soft px-3 py-1.5 text-xs text-ink-muted"
                 >
                   {s}
                 </span>

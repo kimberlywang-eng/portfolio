@@ -63,7 +63,7 @@ export default function SkillsMatrix() {
                           })}
                         </div>
                       ) : (
-                        <span className="inline-block rounded-full border border-border bg-white/5 px-2.5 py-1 text-[11px] text-ink-faint">
+                        <span className="inline-block rounded-full border border-border bg-ink/5 px-2.5 py-1 text-[11px] text-ink-faint">
                           {skill.context}
                         </span>
                       )}
@@ -76,19 +76,17 @@ export default function SkillsMatrix() {
         })}
       </div>
 
-      <Reveal delay={0.15} className="mt-6">
-        <div className="card-surface p-6">
-          <h3 className="font-semibold text-ink mb-4">Certifications</h3>
-          <div className="flex flex-wrap gap-2">
-            {certifications.map((c) => (
-              <span
-                key={c}
-                className="rounded-full border border-border bg-white/5 px-3 py-1.5 text-xs text-ink-muted"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
+      <Reveal delay={0.15} className="mt-8">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs text-ink-faint mr-1">Also certified:</span>
+          {certifications.map((c) => (
+            <span
+              key={c}
+              className="rounded-full border border-border bg-ink/5 px-3 py-1.5 text-xs text-ink-muted"
+            >
+              {c}
+            </span>
+          ))}
         </div>
       </Reveal>
     </div>

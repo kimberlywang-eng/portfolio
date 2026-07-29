@@ -39,11 +39,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20">
         <Reveal>
           <p className="font-mono text-xs text-accent mb-2">02 · skills matrix</p>
           <h2 className="text-2xl md:text-3xl font-semibold text-ink mb-8">
-            What I actually work with
+            The Tools Behind My Work
           </h2>
         </Reveal>
         <SkillsMatrix />
@@ -66,7 +66,7 @@ export default function HomePage() {
       </section>
 
       {latestPost && (
-        <section className="py-16">
+        <section className="py-20">
           <Reveal>
             <p className="font-mono text-xs text-accent mb-2">04 · latest from the blog</p>
             <Link
@@ -87,7 +87,7 @@ export default function HomePage() {
         </section>
       )}
 
-      <section className="py-16">
+      <section className="py-20">
         <Reveal>
           <div className="card-surface p-10 md:p-14 text-center bg-gradient-to-br from-accent/5 via-transparent to-accent-violet/5">
             <h2 className="text-2xl md:text-3xl font-semibold text-ink">

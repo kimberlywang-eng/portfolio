@@ -83,7 +83,7 @@ export default function GitHubWidget() {
       {!error && !repos && (
         <div className="space-y-3 animate-pulse">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="h-14 rounded-lg bg-white/5" />
+            <div key={i} className="h-14 rounded-lg bg-ink/5" />
           ))}
         </div>
       )}
@@ -110,7 +110,7 @@ export default function GitHubWidget() {
                 target="_blank"
                 rel="noreferrer"
                 data-cursor-hover
-                className="flex items-center justify-between gap-3 rounded-lg border border-border px-3.5 py-2.5 hover:border-accent/40 hover:bg-white/[0.02] transition-colors group"
+                className="flex items-center justify-between gap-3 rounded-lg border border-border px-3.5 py-2.5 hover:border-accent/40 hover:bg-ink/[0.03] transition-colors group"
               >
                 <div className="min-w-0">
                   <p className="text-sm text-ink truncate group-hover:text-accent transition-colors">

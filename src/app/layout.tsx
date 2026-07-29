@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -46,10 +47,29 @@ export const metadata: Metadata = {
   },
 };
 
+// Applied before paint so a returning visitor's saved theme shows instantly,
+// with no flash of the wrong theme. Defaults to dark when nothing is saved.
+const themeInitScript = `
+(function () {
+  try {
+    var saved = window.localStorage.getItem('theme');
+    if (saved === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body>
+        {/* beforeInteractive runs before hydration, so the saved theme applies
+            with no flash — and unlike a manual <head> element, this doesn't
+            interfere with Next's own head/style injection. */}
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
         <SpotlightBackground />
         <CustomCursor />
         <Nav />

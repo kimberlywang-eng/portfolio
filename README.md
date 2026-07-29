@@ -1,8 +1,8 @@
 # Kimberly Wang — Portfolio (v2)
 
-Rebuilt July 2026 as a Next.js + TypeScript + Tailwind + Framer Motion app. Replaces the old
-static HTML5UP site (archived in `_archive_old_site/`, safe to delete once you've confirmed
-nothing there is needed).
+Next.js + TypeScript + Tailwind + Framer Motion app. Live at kimberlywang.vercel.app.
+Old static HTML5UP site is archived in `_archive_old_site/` — safe to delete once you've
+confirmed nothing there is needed.
 
 ## Run it locally
 
@@ -13,30 +13,44 @@ npm run dev
 
 Then open http://localhost:3000. Requires Node 18+.
 
-> **Note:** this project was built in an environment where `npm install` couldn't run (no
-> registry access), so this will be the first real compile/test. If anything breaks on first
-> run, it's almost certainly a small TypeScript or import issue — check the terminal output,
-> it'll point at the exact file and line.
+## Before you push the latest round of changes
 
-## Before this goes live — outstanding items
+1. **Ship it**: `git add -A && git commit -m "light/dark mode, profile photo, security hardening" && git push`.
+   Vercel auto-deploys from `main`.
+2. **Next.js version bump** — `package.json` now pins `next` to `14.2.35` (was `14.2.15`),
+   which backports several 2026 security patches (see next.config.js comment for the CSP
+   this also adds). Run `npm install` to pick it up — this will update `package-lock.json`.
+3. **`_archive_old_site/`** — safe to delete once you've spot-checked the live site has
+   everything you need.
 
-1. **Formspree** — the contact form (`src/components/ContactForm.tsx`) posts to a placeholder
-   endpoint. Sign up free at [formspree.io](https://formspree.io) with
-   kimberly.d.wang01@gmail.com, create a form, and replace `YOUR_FORM_ID` in that file with
-   your real form ID. Until then, submissions won't go anywhere.
-2. **Resume PDF** — no resume file is wired up yet. Drop a `resume.pdf` into `/public`, then
-   set `resumeHref` in `src/data/site.ts` to `/resume.pdf` to turn on download buttons.
-3. **Deploy** — this repo is set up to deploy cleanly on [Vercel](https://vercel.com) (free
-   tier): connect the GitHub repo, it auto-detects Next.js, no config needed. If you want to
-   keep a custom domain from GitHub Pages, point the DNS at Vercel instead — GitHub Pages can't
-   serve this app (it needs Node, not just static files, for local dev — though `next build`
-   does produce a fully static-exportable site if you'd rather stay on GitHub Pages; ask and
-   I can wire up `output: 'export'` in `next.config.js`).
-4. **`_archive_old_site/`** — everything from the old static site, kept as a safety net. Once
-   you've spot-checked the new site has everything you need (I cross-checked every image and
-   page reference before moving things), it's safe to delete this folder.
+## What's new in this round (light/dark mode, photo, security, polish)
 
-## What changed from v1
+- **Light/dark mode.** Defaults to the existing dark theme; a sun/moon toggle in the nav
+  (desktop and mobile) switches to a light theme and remembers the choice in `localStorage`.
+  Every colour in the site is a CSS variable (`src/app/globals.css`, `:root` vs `html.light`)
+  so both themes stay in sync automatically — no per-component light/dark branching needed.
+- **Your photo** (`public/images/kim_profile-2026.jpeg`) is now live in three places: the
+  About page hero, a small circular badge in the homepage hero next to "hi, I'm", and a tiny
+  avatar in the nav logo.
+- **Security hardening**: added CSP, HSTS, X-Frame-Options and related headers
+  (`next.config.js`), a Formspree honeypot field on the contact form so bots get silently
+  dropped, bumped Next.js to a patched version, and set up Dependabot
+  (`.github/dependabot.yml`) so you get an automatic weekly PR if a dependency needs a
+  security update — no manual auditing required going forward.
+- **Grammar/copy review** — went through every case study and blog post looking for typos
+  and rough phrasing; the copy was already clean from the round-1 rewrite, nothing needed
+  fixing.
+- **Structure review** — the `app/ → components/ → data/ → types/` split already matches
+  what you'd want (routes, UI, content, and shared types kept separate) — didn't find
+  anything worth restructuring.
+
+> **Sandbox note:** I don't have npm registry access in my working environment, so none of
+> this was compiled/built on my end — same constraint as the original rebuild. I did a
+> careful manual pass (brace-balanced every edited file, checked every new import resolves,
+> checked every image path exists) but your first `npm run dev` after pulling these changes
+> is the real test, same as last time.
+
+## What changed from v1 (original Next.js rebuild)
 
 - Every project and blog page now renders from a typed content model
   (`src/data/projects.ts`, `src/data/blog.ts`) instead of hand-copied HTML — one template,

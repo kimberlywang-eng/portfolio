@@ -14,7 +14,7 @@ export default function SkillsPage() {
       <Reveal>
         <p className="font-mono text-xs text-accent mb-2">skills matrix</p>
         <h1 className="text-3xl md:text-4xl font-semibold text-ink mb-3">
-          What I actually work with
+          The Tools Behind My Work
         </h1>
         <p className="text-ink-muted max-w-xl mb-10">
           Built from real project work — CAD systems at Tesla and Texas Guadaloop, data tooling

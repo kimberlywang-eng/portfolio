@@ -53,7 +53,7 @@ export default function ModelViewerEmbed() {
             environment-image="/models/JurassicPark.jpg"
             shadow-intensity="2"
             shadow-softness="1"
-            style={{ width: '100%', height: '100%', backgroundColor: '#0a0e18' }}
+            style={{ width: '100%', height: '100%', backgroundColor: 'rgb(var(--color-bg-soft))' }}
           />
         ) : (
           <div className="flex h-full items-center justify-center text-ink-faint text-sm font-mono">

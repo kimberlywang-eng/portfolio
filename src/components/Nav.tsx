@@ -1,13 +1,16 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Github, Linkedin, Menu, X } from 'lucide-react';
 import { nav, site } from '@/data/site';
+import ThemeToggle from './ThemeToggle';
 
 export default function Nav() {
   const pathname = usePathname();
+  const isHome = pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -25,8 +28,18 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-mono text-sm text-ink hover:text-accent transition-colors">
-          <span className="text-accent">~/</span>kimberly-wang
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 font-mono text-sm text-ink hover:text-accent transition-colors"
+        >
+          {!isHome && (
+            <span className="relative h-7 w-7 shrink-0 rounded-full overflow-hidden border border-border">
+              <Image src="/images/kim_profile-2026.jpeg" alt="" fill sizes="28px" className="object-cover" />
+            </span>
+          )}
+          <span>
+            <span className="text-accent">~/</span>kimberly-wang
+          </span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-1">
@@ -82,15 +95,19 @@ export default function Nav() {
           >
             Let&apos;s talk
           </Link>
+          <ThemeToggle />
         </div>
 
-        <button
-          className="md:hidden text-ink"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            className="text-ink"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {open && (

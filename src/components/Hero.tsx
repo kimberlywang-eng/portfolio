@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import CodeTypewriter from './CodeTypewriter';
@@ -15,7 +16,25 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-sm text-accent mb-4">hi, I&apos;m</p>
+          <div className="flex items-center gap-5 mb-5">
+            <motion.div
+              initial={{ rotate: -6 }}
+              whileHover={{ rotate: 0, scale: 1.06 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 15 }}
+              className="relative h-20 w-20 md:h-24 md:w-24 shrink-0 overflow-hidden border-2 border-accent/40 shadow-lg shadow-accent/10"
+              style={{ borderRadius: '62% 38% 55% 45% / 55% 45% 62% 38%' }}
+            >
+              <Image
+                src="/images/kim_profile-2026.jpeg"
+                alt="Kimberly Wang"
+                fill
+                sizes="96px"
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+            <p className="font-mono text-sm text-accent">hi, I&apos;m</p>
+          </div>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-ink">
             {site.name}
           </h1>
@@ -49,13 +68,16 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
-        className="mt-16 flex justify-center"
+      <motion.button
+        type="button"
+        onClick={() => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
+        aria-label="Scroll down to see more"
+        className="mt-16 flex justify-center mx-auto text-ink-faint hover:text-accent transition-colors cursor-pointer"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <ChevronDown className="text-ink-faint" size={22} />
-      </motion.div>
+        <ChevronDown size={22} />
+      </motion.button>
     </section>
   );
 }

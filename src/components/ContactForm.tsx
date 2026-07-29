@@ -89,6 +89,17 @@ export default function ContactForm() {
 
       <input type="hidden" name="_subject" value="New message from kimberlywang.vercel.app" />
 
+      {/* Honeypot — Formspree silently drops any submission where this is filled in.
+          Hidden from sighted users via CSS, but bots that auto-fill every field catch it. */}
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+      />
+
       <button
         type="submit"
         disabled={status === 'submitting'}

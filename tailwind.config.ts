@@ -6,25 +6,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // All theme colors read from CSS custom properties (defined in globals.css)
+        // so the whole palette flips between the dark and light themes via one
+        // class on <html>. The `<alpha-value>` placeholder lets Tailwind's
+        // opacity modifiers (e.g. bg-bg/80, text-accent/50) keep working.
         bg: {
-          DEFAULT: '#05070d',
-          soft: '#0a0e18',
-          card: '#0d121e',
+          DEFAULT: 'rgb(var(--color-bg) / <alpha-value>)',
+          soft: 'rgb(var(--color-bg-soft) / <alpha-value>)',
+          card: 'rgb(var(--color-bg-card) / <alpha-value>)',
         },
         border: {
-          DEFAULT: 'rgba(255,255,255,0.08)',
-          soft: 'rgba(255,255,255,0.14)',
+          DEFAULT: 'var(--color-border)',
+          soft: 'var(--color-border-soft)',
         },
         accent: {
-          DEFAULT: '#5eead4',
-          blue: '#60a5fa',
-          violet: '#a78bfa',
-          pink: '#f472b6',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          blue: 'rgb(var(--color-accent-blue) / <alpha-value>)',
+          violet: 'rgb(var(--color-accent-violet) / <alpha-value>)',
+          pink: 'rgb(var(--color-accent-pink) / <alpha-value>)',
         },
         ink: {
-          DEFAULT: '#e6e9f2',
-          muted: '#8b93a7',
-          faint: '#5b6579',
+          DEFAULT: 'rgb(var(--color-ink) / <alpha-value>)',
+          muted: 'rgb(var(--color-ink-muted) / <alpha-value>)',
+          faint: 'rgb(var(--color-ink-faint) / <alpha-value>)',
         },
       },
       fontFamily: {

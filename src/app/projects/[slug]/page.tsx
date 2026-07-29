@@ -50,7 +50,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-white/5 border border-border px-3 py-1 text-xs text-ink-muted"
+              className="rounded-full bg-ink/5 border border-border px-3 py-1 text-xs text-ink-muted"
             >
               {tag}
             </span>
