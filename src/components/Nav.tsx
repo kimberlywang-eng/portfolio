@@ -34,7 +34,7 @@ export default function Nav() {
         >
           {!isHome && (
             <span className="relative h-7 w-7 shrink-0 rounded-full overflow-hidden border border-border">
-              <Image src="/images/kim_profile-2026.jpeg" alt="" fill sizes="28px" className="object-cover" />
+              <Image src="/images/kim_profile-2026.jpeg" alt="" fill sizes="64px" className="object-cover" />
             </span>
           )}
           <span>

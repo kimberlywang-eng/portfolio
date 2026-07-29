@@ -28,7 +28,7 @@ export default function Hero() {
                 src="/images/kim_profile-2026.jpeg"
                 alt="Kimberly Wang"
                 fill
-                sizes="96px"
+                sizes="200px"
                 className="object-cover"
                 priority
               />

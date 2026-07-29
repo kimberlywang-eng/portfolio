@@ -26,10 +26,10 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row gap-8 items-start mb-14">
           <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-border shrink-0">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile-square.jpg"
               alt="Kimberly Wang smiling at Nyhavn in Copenhagen, Denmark"
               fill
-              sizes="(min-width: 768px) 160px, 128px"
+              sizes="(min-width: 768px) 320px, 256px"
               className="object-cover"
               priority
             />
