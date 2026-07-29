@@ -16,7 +16,7 @@ const STATS = [
   'Computing Certificate',
   'Los Angeles, CA',
   '9+ countries traveled',
-  'Mercedes AMG Engineering Programme',
+  'Mercedes AMG Engineering Programme Workshop',
 ];
 
 export default function AboutPage() {
@@ -93,7 +93,7 @@ export default function AboutPage() {
         <Reveal>
           <h2>Texas Guadaloop: where everything changed</h2>
           <p>
-            Freshman year I walked into a Texas Guadaloop meeting — a student team building an
+            Sophomore year (COVID during my freshman year) I walked into a Texas Guadaloop meeting — a student team building an
             actual hyperloop pod — and it clicked immediately. Over the next few years I went from
             new member to president: raised $33,000, built budget and timeline plans from scratch,
             presented to the Dean and executive board, and hosted EuroTube&apos;s R&amp;D Director at

@@ -70,7 +70,22 @@ export default function Hero() {
 
       <motion.button
         type="button"
-        onClick={() => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
+        onClick={(e) => {
+          const heroSection = e.currentTarget.closest('section');
+          const nextSection = heroSection?.nextElementSibling as HTMLElement | null;
+          if (!nextSection) return;
+          // Scroll to the real next section rather than a fixed viewport-height
+          // offset — window.innerHeight shifts on mobile as the browser's
+          // address bar collapses/expands mid-scroll, and mobile's stacked
+          // single-column layout makes the hero taller than one screen, so a
+          // fixed-fraction scrollBy landed mid-hero instead of at the next
+          // section. Also correct for the sticky nav so its top isn't hidden
+          // underneath the header.
+          const header = document.querySelector('header');
+          const offset = header ? header.getBoundingClientRect().height : 0;
+          const top = nextSection.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }}
         aria-label="Scroll down to see more"
         className="mt-16 flex justify-center mx-auto text-ink-faint hover:text-accent transition-colors cursor-pointer"
         animate={{ y: [0, 8, 0] }}

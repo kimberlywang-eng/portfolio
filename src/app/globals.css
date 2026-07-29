@@ -64,6 +64,15 @@ html.light {
   color-scheme: light;
 }
 
+html,
+body {
+  /* Safety net: nothing should ever be wide enough to force a horizontal
+     scrollbar on phones, but if a future image/embed/long word slips
+     through, clip it here instead of letting the whole page shift and
+     hide content off to the side. */
+  overflow-x: hidden;
+}
+
 body {
   @apply bg-bg text-ink antialiased;
   background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),

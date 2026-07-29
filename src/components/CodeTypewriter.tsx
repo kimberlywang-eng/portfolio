@@ -44,7 +44,7 @@ export default function CodeTypewriter() {
         <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         <span className="ml-3 font-mono text-xs text-ink-faint">about-me.ts</span>
       </div>
-      <pre className="font-mono text-[13px] md:text-sm leading-relaxed p-5 min-h-[240px] overflow-x-auto">
+      <pre className="font-mono text-[12px] md:text-sm leading-relaxed p-5 min-h-[240px] whitespace-pre-wrap break-words">
         {LINES.slice(0, lineIdx + 1).map((line, i) => {
           const isCurrent = i === lineIdx && !done;
           const text = isCurrent ? line.text.slice(0, charIdx) : line.text;
