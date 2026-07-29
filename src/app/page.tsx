@@ -50,14 +50,14 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 grid md:grid-cols-2 gap-6">
-        <Reveal>
+        <Reveal className="min-w-0">
           <p className="font-mono text-xs text-accent mb-2">03 · elsewhere</p>
           <h2 className="text-2xl md:text-3xl font-semibold text-ink mb-6">
             Find me around the web
           </h2>
           <SocialFolder />
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} className="min-w-0">
           <p className="font-mono text-xs text-accent mb-2 md:invisible">&nbsp;</p>
           <div className="md:mt-11">
             <GitHubWidget />
