@@ -101,9 +101,11 @@ export default function Nav() {
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <button
+            type="button"
             className="text-ink"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>

@@ -42,7 +42,7 @@ const FILES = [
     href: site.resumeHref ?? undefined,
     preview: site.resumeHref
       ? '// download for the full work history'
-      : '// coming soon — ask via email for now',
+      : '// coming soon, ask via email for now',
   },
 ];
 

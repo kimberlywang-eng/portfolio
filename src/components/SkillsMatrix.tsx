@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { Cog, Code2, ListChecks, Figma as FigmaIcon, LucideIcon } from 'lucide-react';
 import { skillGroups, certifications, SkillEvidence } from '@/data/skills';
@@ -21,12 +25,106 @@ function evidenceLabel(e: SkillEvidence) {
   return b ? { title: b.title, href: `/blog/${b.slug}` } : null;
 }
 
+// Skills used in more than one project get a small "+N" pill that opens a
+// short picker of every linked case study. This renders through a portal
+// into document.body, positioned from the trigger's real on-screen
+// coordinates, rather than as an absolutely-positioned child or an in-flow
+// <details> element — both were tried first and both had real bugs.
+// Absolute positioning got visually hidden behind the next category card,
+// because each card sits inside a Reveal (Framer Motion) wrapper and
+// Motion's `transform` style creates a new stacking context per card, which
+// traps z-index inside whichever card it's in. Expanding in normal document
+// flow avoided that, but growing the pill's own box taller reflowed and
+// resized its neighbours on the same row — which is what made other skills
+// briefly unclickable until the box was closed. A portal escapes every
+// ancestor's stacking context and never touches any other element's layout,
+// so neither bug can happen here.
+function SkillPopover({ skill, evidence }: { skill: string; evidence: SkillEvidence[] }) {
+  const [open, setOpen] = useState(false);
+  const [coords, setCoords] = useState<{ top: number; left: number } | null>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    function updatePosition() {
+      const rect = triggerRef.current?.getBoundingClientRect();
+      if (rect) setCoords({ top: rect.bottom + 6, left: rect.left });
+    }
+    updatePosition();
+
+    function onPointerDown(e: MouseEvent) {
+      const target = e.target as Node;
+      if (triggerRef.current?.contains(target) || panelRef.current?.contains(target)) return;
+      setOpen(false);
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false);
+    }
+
+    window.addEventListener('scroll', updatePosition, true);
+    window.addEventListener('resize', updatePosition);
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('scroll', updatePosition, true);
+      window.removeEventListener('resize', updatePosition);
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <>
+      <button
+        ref={triggerRef}
+        type="button"
+        data-cursor-hover
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex items-center gap-1 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs text-accent hover:bg-accent/15 transition-colors"
+      >
+        {skill}
+        <span className="text-accent/70">+{evidence.length - 1}</span>
+      </button>
+      {open &&
+        coords &&
+        typeof document !== 'undefined' &&
+        createPortal(
+          <div
+            ref={panelRef}
+            style={{ position: 'fixed', top: coords.top, left: coords.left }}
+            className="z-50 w-max max-w-[240px] rounded-xl border border-border bg-bg-card p-1.5 shadow-xl"
+          >
+            {evidence.map((e) => {
+              const label = evidenceLabel(e);
+              if (!label) return null;
+              return (
+                <Link
+                  key={label.href}
+                  href={label.href}
+                  data-cursor-hover
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg px-3 py-2 text-xs text-ink-muted hover:bg-ink/5 hover:text-accent transition-colors"
+                >
+                  {label.title}
+                </Link>
+              );
+            })}
+          </div>,
+          document.body
+        )}
+    </>
+  );
+}
+
 export default function SkillsMatrix() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-ink-faint max-w-2xl">
-        No self-rated proficiency bars — click a skill to see the case study or story that used
-        it. A <span className="text-ink-muted">+N</span> means it shows up in more than one —
+        No self-rated proficiency bars. Click a skill to see the case study or story that used
+        it. A <span className="text-ink-muted">+N</span> means it shows up in more than one,
         click to pick which. Hover an unlinked one for context (usually an NDA&apos;d Tesla
         project).
       </p>
@@ -62,43 +160,7 @@ export default function SkillsMatrix() {
                     }
                   }
                   if (evidence.length > 1) {
-                    // More than one case study demonstrates this skill — rather than
-                    // showing every link inline (the old, cluttered version), the pill
-                    // just flags the count and expands to a small picker on click.
-                    return (
-                      <details key={skill.name} className="skill-details inline-block align-top">
-                        <summary
-                          data-cursor-hover
-                          className="flex cursor-pointer select-none items-center gap-1 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs text-accent hover:bg-accent/15 transition-colors"
-                        >
-                          {skill.name}
-                          <span className="text-accent/70">+{evidence.length - 1}</span>
-                        </summary>
-                        {/* Expands in normal document flow rather than as an absolutely
-                            positioned overlay — each category card sits inside a Reveal
-                            (Framer Motion) wrapper, and Motion's `transform` style creates
-                            a new stacking context per card, which traps `z-index` inside
-                            that card and lets the next card paint over an overlay regardless
-                            of how high the z-index is set. Growing in-flow sidesteps that
-                            whole class of bug instead of fighting it with a higher z-index. */}
-                        <div className="mt-1.5 w-max max-w-[240px] rounded-xl border border-border bg-bg-card p-1.5 shadow-xl">
-                          {evidence.map((e) => {
-                            const label = evidenceLabel(e);
-                            if (!label) return null;
-                            return (
-                              <Link
-                                key={label.href}
-                                href={label.href}
-                                data-cursor-hover
-                                className="block rounded-lg px-3 py-2 text-xs text-ink-muted hover:bg-ink/5 hover:text-accent transition-colors"
-                              >
-                                {label.title}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </details>
-                    );
+                    return <SkillPopover key={skill.name} skill={skill.name} evidence={evidence} />;
                   }
                   return (
                     <span

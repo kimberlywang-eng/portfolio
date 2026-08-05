@@ -39,7 +39,7 @@ export default function ContactForm() {
         <CheckCircle2 className="text-accent" size={32} />
         <h3 className="text-lg font-semibold text-ink">Message sent</h3>
         <p className="text-ink-muted text-sm max-w-sm">
-          Thanks for reaching out — I read every message and usually reply within a few days.
+          Thanks for reaching out. I read every message and usually reply within a few days.
         </p>
       </div>
     );
@@ -82,7 +82,7 @@ export default function ContactForm() {
           rows={5}
           required
           placeholder="What are you working on, and how can I help?"
-          className="w-full rounded-lg bg-bg-soft border border-border px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent/50 transition-colors"
+          className="w-full rounded-lg bg-bg-soft border border-border px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent/50 focus:ring-2 focus:ring-accent/30 transition-colors"
         />
       </div>
 
@@ -111,7 +111,7 @@ export default function ContactForm() {
 
       {status === 'error' && (
         <p className="flex items-center gap-2 text-sm text-red-400">
-          <AlertCircle size={14} /> Something went wrong — email me directly at kimberly.d.wang01@gmail.com instead.
+          <AlertCircle size={14} /> Something went wrong. Email me directly at kimberly.d.wang01@gmail.com instead.
         </p>
       )}
     </form>
@@ -142,7 +142,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-lg bg-bg-soft border border-border px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent/50 transition-colors"
+        className="w-full rounded-lg bg-bg-soft border border-border px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-accent/50 focus:ring-2 focus:ring-accent/30 transition-colors"
       />
     </div>
   );
@@ -179,7 +179,7 @@ function PillSelect({
     <div>
       <p className="block text-sm text-ink-muted mb-1.5">
         {label}
-        {multi && <span className="text-ink-faint"> — pick as many as apply</span>}
+        {multi && <span className="text-ink-faint"> (pick as many as apply)</span>}
       </p>
       <div className="flex flex-wrap gap-2">
         {options.map((opt) => {

@@ -30,7 +30,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
       <Reveal>
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-accent transition-colors mb-8"
+          className="flex items-center gap-1.5 text-sm text-ink-muted hover:text-accent transition-colors mb-8"
         >
           <ArrowLeft size={14} /> All case studies
         </Link>

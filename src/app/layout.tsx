@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    'Portfolio of Kimberly Wang — Associate Project Manager at Walt Disney Imagineering (Tokyo Disney Resort), 2x Tesla intern, Woven by Toyota (Tokyo), UT Austin BS ChemE (Honors). Open to PM, manufacturing/systems engineering, and data roles.',
+    'Portfolio of Kimberly Wang: Associate Project Manager at Walt Disney Imagineering (Tokyo Disney Resort), 2x Tesla intern, Woven by Toyota (Tokyo), UT Austin BS ChemE (Honors). Open to PM, manufacturing/systems engineering, and data roles.',
   keywords: [
     'Kimberly Wang',
     'project manager',
@@ -70,11 +71,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
+        {/* Keyboard-only bypass for the nav — invisible until it receives
+            focus (first Tab press), then jumps straight to the content. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-bg"
+        >
+          Skip to main content
+        </a>
         <SpotlightBackground />
         <CustomCursor />
         <Nav />
-        <main className="mx-auto max-w-6xl px-6">{children}</main>
+        <main id="main-content" className="mx-auto max-w-6xl px-6">
+          {children}
+        </main>
         <Footer />
+        {/* Vercel Analytics — cookie-free page-view tracking, free on the
+            Hobby plan, view at vercel.com under the project's Analytics tab.
+            Only actually collects data once deployed on Vercel; a no-op
+            everywhere else (local dev, this build). */}
+        <Analytics />
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 export const metadata: Metadata = {
   title: 'Skills',
   description:
-    'Engineering, data, project management, and design skills — from SolidWorks and Python to cross-functional program management at Tesla and Walt Disney Imagineering.',
+    'Engineering, data, project management, and design skills: from SolidWorks and Python to cross-functional program management at Tesla and Walt Disney Imagineering.',
 };
 
 export default function SkillsPage() {
@@ -17,7 +17,7 @@ export default function SkillsPage() {
           The Tools Behind My Work
         </h1>
         <p className="text-ink-muted max-w-xl mb-10">
-          Built from real project work — CAD systems at Tesla and Texas Guadaloop, data tooling
+          Built from real project work: CAD systems at Tesla and Texas Guadaloop, data tooling
           from self-taught projects, and program management at Walt Disney Imagineering.
         </p>
       </Reveal>

@@ -64,7 +64,7 @@ export default async function GitHubWidget() {
 
       {error && (
         <p className="text-sm text-ink-faint">
-          Couldn&apos;t reach the GitHub API right now — view the profile directly{' '}
+          Couldn&apos;t reach the GitHub API right now. View the profile directly{' '}
           <a href={site.github} target="_blank" rel="noreferrer" className="text-accent underline">
             here
           </a>
@@ -120,7 +120,7 @@ export default async function GitHubWidget() {
       )}
 
       {repos && repos.length === 0 && (
-        <p className="text-sm text-ink-faint">No public repos returned yet — check the profile directly.</p>
+        <p className="text-sm text-ink-faint">No public repos returned yet. Check the profile directly.</p>
       )}
     </div>
   );

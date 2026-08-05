@@ -52,5 +52,5 @@ export default function CustomCursor() {
     };
   }, []);
 
-  return <div ref={dotRef} className="cursor-dot hidden md:block" />;
+  return <div ref={dotRef} aria-hidden="true" className="cursor-dot hidden md:block" />;
 }

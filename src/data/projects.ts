@@ -7,7 +7,7 @@ export const projects: ProjectMeta[] = [
     category: 'Engineering',
     tags: ['SolidWorks', 'CAD', 'Aerodynamics'],
     summary:
-      'Full-scale SolidWorks chassis design for a 2021-spec F1 car, built from hand sketches through to a finished assembly — including drag-minimization math and a homage I-beam.',
+      'Full-scale SolidWorks chassis design for a 2021-spec F1 car, built from hand sketches through to a finished assembly, including drag-minimization math and a homage I-beam.',
     date: 'Dec 2021 – Oct 2022',
     image: '/images/f1_chassisfront.png',
     links: [{ label: 'Overview render', href: '/images/f1_chassis_genshape.png' }],
@@ -24,7 +24,7 @@ export const projects: ProjectMeta[] = [
           'Hand-sketched the chassis with estimated dimensions before touching CAD',
           'Modeled each component in SolidWorks and extruded as needed',
           'Built a full assembly, including an I-beam spar as a nod to the hyperloop pod I worked on separately',
-          'Used weldments to join the frame — after an early attempt to do it in assembly-mode failed and forced a rework in part-mode',
+          'Used weldments to join the frame, after an early attempt to do it in assembly-mode failed and forced a rework in part-mode',
         ],
       },
       {
@@ -35,7 +35,7 @@ export const projects: ProjectMeta[] = [
       { type: 'h2', text: 'What made it hard' },
       {
         type: 'p',
-        text: "Most public F1 chassis data is either marketing material or heavily simplified, so I had to work backward from known constraints (aerodynamic goals, structural loads) rather than a spec sheet. I also learned the hard way that weldments only work in part-mode, not assembly — which meant rebuilding a chunk of the design after the I-beam integration approach hit a wall.",
+        text: "Most public F1 chassis data is either marketing material or heavily simplified, so I had to work backward from known constraints (aerodynamic goals, structural loads) rather than a spec sheet. I also learned the hard way that weldments only work in part-mode, not assembly, which meant rebuilding a chunk of the design after the I-beam integration approach hit a wall.",
       },
       {
         type: 'quote',
@@ -50,19 +50,19 @@ export const projects: ProjectMeta[] = [
   },
   {
     slug: 'lateral-suspension',
-    title: 'Lateral Suspension System — Texas Guadaloop Hyperloop Pod',
+    title: 'Lateral Suspension System: Texas Guadaloop Hyperloop Pod',
     category: 'Engineering',
     tags: ['SolidWorks', 'FEA', 'BOM', 'Manufacturing'],
     summary:
-      'Designed and manufactured the lateral suspension subsystem for a competition hyperloop pod — from air-shock concept through a $4,287 manufactured assembly with a full bill of materials.',
+      'Designed and manufactured the lateral suspension subsystem for a competition hyperloop pod, from air-shock concept through a $4,287 manufactured assembly with a full bill of materials.',
     date: 'Fall 2021 – Spring 2022',
     image: '/images/suspension2_cadfront.jpg',
     content: [
       {
         type: 'p',
-        text: "As a chemical engineer, SolidWorks wasn't part of my curriculum — I picked it up by joining the lateral suspension subteam on Texas Guadaloop, UT Austin's hyperloop pod team. The subsystem's job: keep the pod centered on the I-beam track, absorb vibration, and protect internal components, all while holding a safety factor above 2.",
+        text: "As a chemical engineer, SolidWorks wasn't part of my curriculum. I picked it up by joining the lateral suspension subteam on Texas Guadaloop, UT Austin's hyperloop pod team. The subsystem's job: keep the pod centered on the I-beam track, absorb vibration, and protect internal components, all while holding a safety factor above 2.",
       },
-      { type: 'h2', text: 'Semester 1 — Design' },
+      { type: 'h2', text: 'Semester 1: Design' },
       {
         type: 'list',
         items: [
@@ -77,7 +77,7 @@ export const projects: ProjectMeta[] = [
         src: '/images/suspension2_cadiso.jpg',
         alt: 'Suspension isometric CAD',
       },
-      { type: 'h2', text: 'Semester 2 — Manufacturing' },
+      { type: 'h2', text: 'Semester 2: Manufacturing' },
       {
         type: 'list',
         items: [
@@ -98,17 +98,17 @@ export const projects: ProjectMeta[] = [
       { type: 'h2', text: 'What I learned' },
       {
         type: 'p',
-        text: "Design changes rippled across every other subsystem, so integration meetings mattered as much as CAD time. I also learned the limits of rapid prototyping — several 3D-printed parts weren't sturdy enough for the final assembly, which pushed the Gen II design toward magnetic (frictionless) suspension instead.",
+        text: "Design changes rippled across every other subsystem, so integration meetings mattered as much as CAD time. I also learned the limits of rapid prototyping: several 3D-printed parts weren't sturdy enough for the final assembly, which pushed the Gen II design toward magnetic (frictionless) suspension instead.",
       },
       {
         type: 'callout',
-        text: 'Design is a process, not an end point — the version that shipped was the fourth or fifth iteration, not the first.',
+        text: 'Design is a process, not an end point. The version that shipped was the fourth or fifth iteration, not the first.',
       },
     ],
   },
   {
     slug: 'game-controller',
-    title: 'Ergonomic Game Controller — SolidWorks Design',
+    title: 'Ergonomic Game Controller: SolidWorks Design',
     category: 'Engineering',
     tags: ['SolidWorks', 'Manufacturing', 'Ergonomics'],
     summary:
@@ -119,7 +119,7 @@ export const projects: ProjectMeta[] = [
     content: [
       {
         type: 'p',
-        text: "This started as a scoped-down version of a bigger ambition — I'd wanted to CAD a full F1 car chassis over winter break, but a Texas Guadaloop teammate suggested I build up SolidWorks fundamentals on something smaller first. A game controller gave me hand-grip ergonomics, button geometry, and a real PCB footprint to design around.",
+        text: "This started as a scoped-down version of a bigger ambition. I'd wanted to CAD a full F1 car chassis over winter break, but a Texas Guadaloop teammate suggested I build up SolidWorks fundamentals on something smaller first. A game controller gave me hand-grip ergonomics, button geometry, and a real PCB footprint to design around.",
       },
       { type: 'h2', text: 'Process' },
       {
@@ -138,12 +138,12 @@ export const projects: ProjectMeta[] = [
           'Rule of thumb applied: ribs at ~60% of main wall thickness (e.g. 2.00mm wall → 1.20mm ribs)',
           'Joystick cutout offset 22mm top-down to check clearance between joystick and housing',
           'Used SolidWorks Interference Detection to catch part overlaps before finalizing',
-          'Applied real-world tolerancing — no part is ever made to an exact dimension, so features like the button cutouts carried a defined offset (0.2mm)',
+          'Applied real-world tolerancing: no part is ever made to an exact dimension, so features like the button cutouts carried a defined offset (0.2mm)',
         ],
       },
       {
         type: 'p',
-        text: "The switch and button gap was never fully resolved — I didn't have exact switch dimensions, so the final model leaves a visible gap that a production version would need to close with either a redesigned PCB extension or an edge connector.",
+        text: "The switch and button gap was never fully resolved. I didn't have exact switch dimensions, so the final model leaves a visible gap that a production version would need to close with either a redesigned PCB extension or an edge connector.",
       },
       {
         type: 'quote',
@@ -153,33 +153,33 @@ export const projects: ProjectMeta[] = [
   },
   {
     slug: 'interactive-3d-model',
-    title: 'Interactive 3D Model Viewer — Three.js & model-viewer',
+    title: 'Interactive 3D Model Viewer: Three.js & model-viewer',
     category: 'Software',
     tags: ['Three.js', 'model-viewer', 'Animation', '3D'],
     summary:
-      'A browser-based animated T-Rex viewer with live animation switching and playback-speed control — built after three days of format wrangling between .fbx, .obj, and .glb pipelines.',
+      'A browser-based animated T-Rex viewer with live animation switching and playback-speed control, built after three days of format wrangling between .fbx, .obj, and .glb pipelines.',
     date: 'Mar – Jun 2023',
     image: '/images/mixamo_baymax.png',
     embed: 'model-viewer',
     content: [
       {
         type: 'p',
-        text: "A coworker at Tesla suggested adding 3D modeling to my portfolio. I had zero Three.js experience going in, and it took three focused days — spread out over a few months around work and Texas Guadaloop — to go from a blank viewport to a live, animatable model.",
+        text: "A coworker at Tesla suggested adding 3D modeling to my portfolio. I had zero Three.js experience going in, and it took three focused days, spread out over a few months around work and Texas Guadaloop, to go from a blank viewport to a live, animatable model.",
       },
-      { type: 'h2', text: 'Day 1 — Learning Three.js' },
+      { type: 'h2', text: 'Day 1: Learning Three.js' },
       {
         type: 'p',
         text: "Set up Three.js via Node/npm. First blocker: the viewport rendered a black placeholder no matter what I changed about lighting or camera. The real problem turned out to be unrelated JS files on the page conflicting with Three.js's module loading.",
       },
-      { type: 'h2', text: 'Day 2 — Switching approaches' },
+      { type: 'h2', text: 'Day 2: Switching approaches' },
       {
         type: 'p',
-        text: "Discovered model-viewer, Google's web component purpose-built for 3D in the browser — and immediately hit a new set of constraints: it only accepts .glb files. My first model (Baymax) had a subfolder structure and complex skin that model-viewer couldn't resolve. I converted a Wall-E .rar file, found a .glb version that was too large for GitHub's push limit, and eventually landed on a smaller Wall-E file that actually worked — my first live animated model.",
+        text: "Discovered model-viewer, Google's web component purpose-built for 3D in the browser, and immediately hit a new set of constraints: it only accepts .glb files. My first model (Baymax) had a subfolder structure and complex skin that model-viewer couldn't resolve. I converted a Wall-E .rar file, found a .glb version that was too large for GitHub's push limit, and eventually landed on a smaller Wall-E file that actually worked: my first live animated model.",
       },
-      { type: 'h2', text: 'Day 3 — Animation' },
+      { type: 'h2', text: 'Day 3: Animation' },
       {
         type: 'p',
-        text: "Mixamo handles rigging and animation but exports .fbx, not .glb — another format-conversion chain. I found a pre-rigged, pre-animated T-Rex in native .glb format, which bypassed the Mixamo step entirely, and wired up buttons to swap between Bite, Run, and Roar animations plus a playback-speed slider.",
+        text: "Mixamo handles rigging and animation but exports .fbx, not .glb: another format-conversion chain. I found a pre-rigged, pre-animated T-Rex in native .glb format, which bypassed the Mixamo step entirely, and wired up buttons to swap between Bite, Run, and Roar animations plus a playback-speed slider.",
       },
       {
         type: 'callout',
@@ -188,7 +188,7 @@ export const projects: ProjectMeta[] = [
       { type: 'h2', text: 'Try it' },
       {
         type: 'p',
-        text: 'The live viewer below uses the same technique — model-viewer with per-animation .glb files swapped on click. Model credit: "Animated T-Rex Model (free)" by ulunkwulunk, CC BY 4.0.',
+        text: 'The live viewer below uses the same technique: model-viewer with per-animation .glb files swapped on click. Model credit: "Animated T-Rex Model (free)" by ulunkwulunk, CC BY 4.0.',
       },
       { type: 'h2', text: 'Skills gained' },
       {
@@ -204,11 +204,11 @@ export const projects: ProjectMeta[] = [
   },
   {
     slug: 'covid-data-analysis',
-    title: 'COVID-19 Data Analysis — Pandas & Kaggle',
+    title: 'COVID-19 Data Analysis: Pandas & Kaggle',
     category: 'Data',
     tags: ['Python', 'Pandas', 'Kaggle', 'Data Visualization'],
     summary:
-      'Self-taught Pandas project analyzing a public COVID-19 dataset — cleaning, indexing, and visualizing the relationship between pre-existing health conditions and case counts.',
+      'Self-taught Pandas project analyzing a public COVID-19 dataset: cleaning, indexing, and visualizing the relationship between pre-existing health conditions and case counts.',
     date: '2023',
     image: '/images/finaldata_covidcsv.png',
     links: [
@@ -220,7 +220,7 @@ export const projects: ProjectMeta[] = [
     content: [
       {
         type: 'p',
-        text: "This project started with a throwaway comment on a call with an F1 simulation software architect, who mentioned Pandas for data processing. I'd never used it. A Tesla colleague on the Vision Automation team explained it was a Python library for working with large, Excel-style datasets — and I decided to learn it hands-on with a real dataset rather than a tutorial.",
+        text: "This project started with a throwaway comment on a call with an F1 simulation software architect, who mentioned Pandas for data processing. I'd never used it. A Tesla colleague on the Vision Automation team explained it was a Python library for working with large, Excel-style datasets, and I decided to learn it hands-on with a real dataset rather than a tutorial.",
       },
       { type: 'h2', text: 'Process' },
       {
@@ -236,17 +236,17 @@ export const projects: ProjectMeta[] = [
       { type: 'h2', text: 'Debugging' },
       {
         type: 'p',
-        text: "The chart didn't render on the first several attempts. Isolating the plotting code into its own cell, restarting the kernel, and re-running from scratch ruled out interference from earlier cells. The real bug was in the aggregation logic — a boolean mask (df.iloc[:,7:17] == 1) was being used directly instead of summed, so the count values feeding the chart were wrong. Rewriting it as df.iloc[:, 7:17].eq(1).sum(axis=1) fixed it.",
+        text: "The chart didn't render on the first several attempts. Isolating the plotting code into its own cell, restarting the kernel, and re-running from scratch ruled out interference from earlier cells. The real bug was in the aggregation logic: a boolean mask (df.iloc[:,7:17] == 1) was being used directly instead of summed, so the count values feeding the chart were wrong. Rewriting it as df.iloc[:, 7:17].eq(1).sum(axis=1) fixed it.",
       },
       {
         type: 'quote',
-        text: 'Sleep is the best debugger — the chart wasn\'t rendering at midnight, and the fix was obvious the next morning.',
+        text: 'Sleep is the best debugger. The chart wasn\'t rendering at midnight, and the fix was obvious the next morning.',
       },
       { type: 'h2', text: 'Takeaways' },
       {
         type: 'list',
         items: [
-          'loc is label-based indexing; iloc is integer-based — mixing them up caused most of the early bugs',
+          'loc is label-based indexing; iloc is integer-based, and mixing them up caused most of the early bugs',
           'Reading library documentation properly matters more with an unfamiliar plotting API',
           'Restart the kernel after installing a new library, or it silently won\'t load',
         ],
@@ -255,17 +255,17 @@ export const projects: ProjectMeta[] = [
   },
   {
     slug: 'calendar-app',
-    title: 'Calendar App — Python',
+    title: 'Calendar App: Python',
     category: 'Software',
     tags: ['Python', 'CS303E'],
     summary:
-      "A from-scratch Python calendar generator for CS303E — computes leap years and days-per-month manually and renders a formatted calendar for any valid year.",
+      "A from-scratch Python calendar generator for CS303E. Computes leap years and days-per-month manually and renders a formatted calendar for any valid year.",
     date: 'Fall 2021',
     image: '/images/calendarapp_code.png',
     content: [
       {
         type: 'p',
-        text: "One of the first projects from my first-ever coding class, CS303E, and still one I'm proud of. The assignment: build a program that takes a year as input and prints a correctly formatted calendar for all 12 months — no calendar libraries allowed, so the leap-year and days-per-month math had to be derived and coded by hand.",
+        text: "One of the first projects from my first-ever coding class, CS303E, and still one I'm proud of. The assignment: build a program that takes a year as input and prints a correctly formatted calendar for all 12 months. No calendar libraries allowed, so the leap-year and days-per-month math had to be derived and coded by hand.",
       },
       { type: 'h2', text: 'Process' },
       {
@@ -280,7 +280,7 @@ export const projects: ProjectMeta[] = [
       { type: 'h2', text: 'What I learned' },
       {
         type: 'p',
-        text: "The professor gave a goal with no implementation instructions, which meant the research and structure were entirely mine to figure out. I lost a few points for a formatting detail — the retry-input message needed two-space indentation to match spec — a reminder that correctness and exact spec-matching aren't the same thing.",
+        text: "The professor gave a goal with no implementation instructions, which meant the research and structure were entirely mine to figure out. I lost a few points for a formatting detail: the retry-input message needed two-space indentation to match spec, a reminder that correctness and exact spec-matching aren't the same thing.",
       },
       {
         type: 'callout',
@@ -290,11 +290,11 @@ export const projects: ProjectMeta[] = [
   },
   {
     slug: 'vima',
-    title: 'Vima — Study Space Finder (Hackathon, Best Education Hack)',
+    title: 'Vima: Study Space Finder (Hackathon, Best Education Hack)',
     category: 'Software',
     tags: ['React Native', 'Hackathon', 'Mobile'],
     summary:
-      'A React Native app to help students find open study spaces, built in 24 hours for my first hackathon — won Best Education Hack.',
+      'A React Native app to help students find open study spaces, built in 24 hours for my first hackathon. Won Best Education Hack.',
     date: 'Feb 2022',
     image: '/images/vima_logo.png',
     links: [
@@ -306,7 +306,7 @@ export const projects: ProjectMeta[] = [
     content: [
       {
         type: 'p',
-        text: "My first hackathon, joined at a friend's request right after I'd finished my first Python class. The brief: design, code, and pitch a product in 24 hours. Our team picked education as our focus category and identified a specific, relatable problem — it's hard to find an open study space on a crowded campus.",
+        text: "My first hackathon, joined at a friend's request right after I'd finished my first Python class. The brief: design, code, and pitch a product in 24 hours. Our team picked education as our focus category and identified a specific, relatable problem: it's hard to find an open study space on a crowded campus.",
       },
       { type: 'h2', text: 'Process' },
       {
@@ -314,7 +314,7 @@ export const projects: ProjectMeta[] = [
         items: [
           'Identified the problem: students couldn\'t quickly find available study spaces',
           'Chose React Native for cross-platform (iOS/Android) reach, on a mentor\'s recommendation',
-          'Split work — I built the front end and GPS/location logic; teammates built the pitch deck and login flow',
+          'Split work: I built the front end and GPS/location logic; teammates built the pitch deck and login flow',
           'Built and rehearsed a live pitch for a judging panel',
         ],
       },
@@ -329,7 +329,7 @@ export const projects: ProjectMeta[] = [
       },
       {
         type: 'p',
-        text: "After a sleepless 24 hours and a lot of coffee, the team won Best Education Hack — our first hackathon, first placement.",
+        text: "After a sleepless 24 hours and a lot of coffee, the team won Best Education Hack: our first hackathon, first placement.",
       },
       {
         type: 'image',
@@ -340,22 +340,22 @@ export const projects: ProjectMeta[] = [
   },
   {
     slug: 'portfolio-website',
-    title: 'This Portfolio — Built, Then Rebuilt',
+    title: 'This Portfolio: Built, Then Rebuilt',
     category: 'Software',
     tags: ['Next.js', 'TypeScript', 'Tailwind', 'HTML/CSS'],
     summary:
       "The site you're on. Started as a winter-break HTML project after my first coding class; rebuilt in 2026 as a Next.js app with a dark, interactive, recruiter-facing design.",
-    date: 'Winter 2022 — present',
+    date: 'Winter 2022 – present',
     image: '/images/websiteCode.jpg',
     content: [
       {
         type: 'p',
-        text: "This site started during winter break 2022, right after CS303E — my first coding class. I hadn't written a line of HTML before, but the Python fundamentals from class (syntax structure, logic, debugging habits) transferred faster than I expected. I taught myself HTML and CSS through YouTube and documentation, then hosted the result on GitHub Pages as a running journal of what I was building and learning.",
+        text: "This site started during winter break 2022, right after CS303E, my first coding class. I hadn't written a line of HTML before, but the Python fundamentals from class (syntax structure, logic, debugging habits) transferred faster than I expected. I taught myself HTML and CSS through YouTube and documentation, then hosted the result on GitHub Pages as a running journal of what I was building and learning.",
       },
       { type: 'h2', text: 'V1: static HTML, 2022–2026' },
       {
         type: 'p',
-        text: "The original site was a hand-edited static HTML5UP template — every new project or blog post meant copy-pasting a page and manually keeping the navigation, footer, and contact form in sync across a dozen-plus files. It worked, and it shipped consistently for years, but it wasn't built to scale past a personal journal.",
+        text: "The original site was a hand-edited static HTML5UP template. Every new project or blog post meant copy-pasting a page and manually keeping the navigation, footer, and contact form in sync across a dozen-plus files. It worked, and it shipped consistently for years, but it wasn't built to scale past a personal journal.",
       },
       { type: 'h2', text: 'V2: Next.js rebuild, 2026' },
       {
@@ -373,17 +373,17 @@ export const projects: ProjectMeta[] = [
       },
       {
         type: 'callout',
-        text: "Keep innovating — the same principle behind the 2022 version is still true in 2026, just with a much better toolchain.",
+        text: "Keep innovating. The same principle behind the 2022 version is still true in 2026, just with a much better toolchain.",
       },
     ],
   },
   {
     slug: 'videography',
-    title: 'Videography — Award-Winning Robotics Films',
+    title: 'Videography: Award-Winning Robotics Films',
     category: 'Design',
     tags: ['Adobe Premiere Pro', 'Storytelling', 'Video'],
     summary:
-      "Self-taught video production for a FIRST Robotics team — including a Chairman's Award-winning film, the team's first win in its history.",
+      "Self-taught video production for a FIRST Robotics team, including a Chairman's Award-winning film, the team's first win in its history.",
     date: '2019 – 2020',
     image: '/images/Chairman1.jpg',
     links: [
@@ -393,7 +393,7 @@ export const projects: ProjectMeta[] = [
     content: [
       {
         type: 'p',
-        text: "Video production found me, not the other way around — a robotics team needed someone to produce a film for a prestigious award and nobody else had picked it up. I'd never opened Adobe Premiere Pro before that first project.",
+        text: "Video production found me, not the other way around. A robotics team needed someone to produce a film for a prestigious award and nobody else had picked it up. I'd never opened Adobe Premiere Pro before that first project.",
       },
       { type: 'h2', text: "2019 Chairman's Award" },
       {
@@ -403,17 +403,17 @@ export const projects: ProjectMeta[] = [
       { type: 'h2', text: 'Beyond the award' },
       {
         type: 'p',
-        text: "I kept producing videos for the team through April 2020 — recap videos, a follow-up Chairman's submission — and separately produced a video for Boy Scouts Troop 440, shown by Harris County Precinct 4 during Civic Adventure Week to promote outdoor conservation.",
+        text: "I kept producing videos for the team through April 2020 (recap videos, a follow-up Chairman's submission) and separately produced a video for Boy Scouts Troop 440, shown by Harris County Precinct 4 during Civic Adventure Week to promote outdoor conservation.",
       },
       {
         type: 'quote',
-        text: "Never back down from a challenge — it's what makes you stronger.",
+        text: "Never back down from a challenge. It's what makes you stronger.",
       },
     ],
   },
   {
     slug: 'atlas',
-    title: 'Atlas — Android Route Planning App',
+    title: 'Atlas: Android Route Planning App',
     category: 'Software',
     tags: ['Android Studio', 'Coming Soon'],
     summary: 'Route planning and data visualization app, in progress in Android Studio.',
@@ -423,7 +423,7 @@ export const projects: ProjectMeta[] = [
     content: [
       {
         type: 'p',
-        text: "Atlas is a route-planning and data-visualization app in active development in Android Studio, focused on mobile workflow and data-viz fundamentals outside of a web context. Details and a live build are coming — check back or reach out if you want a preview.",
+        text: "Atlas is a route-planning and data-visualization app in active development in Android Studio, focused on mobile workflow and data-viz fundamentals outside of a web context. Details and a live build are coming, check back or reach out if you want a preview.",
       },
     ],
   },

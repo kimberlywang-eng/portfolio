@@ -42,9 +42,13 @@ export default function Hero() {
           <p className="mt-6 text-ink-muted text-base md:text-lg leading-relaxed max-w-lg">
             {site.tagline}
           </p>
-          <p className="mt-3 inline-flex items-center rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs text-accent">
+          <div className="mt-4 flex items-center gap-2 text-xs text-ink-faint">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
             {site.openTo}
-          </p>
+          </div>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/projects"

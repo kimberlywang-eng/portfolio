@@ -16,7 +16,7 @@ export default function ContactPage() {
         <p className="font-mono text-xs text-accent mb-2">contact</p>
         <h1 className="text-3xl md:text-4xl font-semibold text-ink mb-3">Let&apos;s talk</h1>
         <p className="text-ink-muted max-w-xl mb-10">
-          Recruiting, collaboration, or just want to talk shop — the form below sends straight to
+          Recruiting, collaboration, or just want to talk shop, the form below sends straight to
           my inbox. {site.openTo}
         </p>
       </Reveal>

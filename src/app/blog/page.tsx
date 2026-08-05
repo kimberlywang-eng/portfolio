@@ -7,7 +7,7 @@ import Reveal from '@/components/Reveal';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    "Kimberly Wang's blog — from freshman year at UT Austin through Tesla, Woven by Toyota in Tokyo, and Walt Disney Imagineering. Real stories about engineering, leadership, and growth.",
+    "Kimberly Wang's blog: from freshman year at UT Austin through Tesla, Woven by Toyota in Tokyo, and Walt Disney Imagineering. Real stories about engineering, leadership, and growth.",
 };
 
 export default function BlogPage() {
@@ -22,7 +22,7 @@ export default function BlogPage() {
           The story behind the resume
         </h1>
         <p className="text-ink-muted max-w-xl mb-10">
-          Longer-form posts on the roles, teams, and decisions behind each chapter — Tesla, Woven
+          Longer-form posts on the roles, teams, and decisions behind each chapter: Tesla, Woven
           by Toyota, Texas Guadaloop, and Walt Disney Imagineering.
         </p>
       </Reveal>

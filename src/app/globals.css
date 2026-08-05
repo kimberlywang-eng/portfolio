@@ -20,7 +20,11 @@
   --color-accent-pink: 244 114 182;
   --color-ink: 230 233 242;
   --color-ink-muted: 139 147 167;
-  --color-ink-faint: 91 101 121;
+  /* Lightened from 91 101 121 — the original measured 3.2-3.4:1 against the
+     card background, below the 4.5:1 WCAG AA minimum for normal text. This
+     colour is used at small sizes (dates, meta labels) throughout the site,
+     so it needed to actually pass, not just look close. */
+  --color-ink-faint: 115 125 145;
 
   --scrollbar-track: #05070d;
   --scrollbar-thumb: #1b2333;
@@ -37,13 +41,18 @@ html.light {
   --color-bg-card: 255 255 255;
   --color-border: rgba(15, 23, 42, 0.09);
   --color-border-soft: rgba(15, 23, 42, 0.16);
-  --color-accent: 13 148 136;
+  /* accent and accent-pink darkened slightly from their original values
+     (13 148 136 / 219 39 119) — both measured under 4.5:1 against the
+     light theme's off-white backgrounds, and accent in particular is used
+     for link text throughout the site, so it needed to clear the WCAG AA
+     bar for normal-sized text, not just look close on a pure-white swatch. */
+  --color-accent: 0 123 111;
   --color-accent-blue: 37 99 235;
   --color-accent-violet: 124 58 237;
-  --color-accent-pink: 219 39 119;
+  --color-accent-pink: 208 28 108;
   --color-ink: 15 23 42;
   --color-ink-muted: 71 85 105;
-  --color-ink-faint: 100 116 139;
+  --color-ink-faint: 94 110 133;
 
   --scrollbar-track: #f1f2f6;
   --scrollbar-thumb: #cbd2e0;
@@ -136,15 +145,6 @@ body {
   backdrop-filter: blur(6px);
 }
 
-/* Skills matrix "+N" pills use <details>/<summary> as a zero-JS dropdown for
-   skills demonstrated in more than one project — this just hides the browser's
-   default disclosure arrow so it reads as a plain pill button. */
-.skill-details > summary {
-  list-style: none;
-}
-.skill-details > summary::-webkit-details-marker {
-  display: none;
-}
 
 .prose-content h2 {
   @apply text-xl md:text-2xl font-semibold text-ink mt-10 mb-4;

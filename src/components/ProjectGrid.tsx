@@ -20,7 +20,9 @@ export default function ProjectGrid() {
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
+            type="button"
             onClick={() => setFilter(cat)}
+            aria-pressed={filter === cat}
             data-cursor-hover
             className={`rounded-full px-4 py-1.5 text-sm border transition-colors ${
               filter === cat

@@ -94,7 +94,7 @@ export default function HomePage() {
               Building something worth talking about?
             </h2>
             <p className="text-ink-muted mt-3 max-w-lg mx-auto">
-              Open to PM, manufacturing/systems engineering, and data roles — always happy to talk shop.
+              Open to PM, manufacturing/systems engineering, and data roles, always happy to talk shop.
             </p>
             <Link
               href="/contact"

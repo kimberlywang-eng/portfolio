@@ -24,9 +24,14 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
   return (
     <div className="py-16 md:py-24">
       <Reveal>
+        {/* `flex` here (not `inline-flex`) is deliberate: an inline-level box
+            followed immediately by the bare <span> below it, with nothing
+            forcing a line break, could render on the same line and crowd
+            into the date — `flex` makes this a block-level row instead, so
+            the date always starts on its own line beneath it. */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-accent transition-colors mb-8"
+          className="flex items-center gap-1.5 text-sm text-ink-muted hover:text-accent transition-colors mb-8"
         >
           <ArrowLeft size={14} /> All posts
         </Link>

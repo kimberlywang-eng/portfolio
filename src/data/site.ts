@@ -2,7 +2,7 @@ export const site = {
   name: 'Kimberly Wang',
   role: 'Associate Project Manager · Walt Disney Imagineering',
   tagline:
-    'Chemical engineer by training, systems thinker by habit. I build things — CAD models, data pipelines, apps, and the timelines that ship them.',
+    'Chemical engineer by training, systems thinker by habit. I build things: CAD models, data pipelines, apps, and the timelines that ship them.',
   location: 'Los Angeles, CA',
   email: 'kimberly.d.wang01@gmail.com',
   github: 'https://github.com/kimberlywang-eng',

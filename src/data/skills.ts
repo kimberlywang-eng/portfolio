@@ -41,8 +41,8 @@ export const skillGroups: SkillGroup[] = [
         name: 'Finite Element Analysis (FEA)',
         evidence: [{ type: 'project', slug: 'lateral-suspension' }],
       },
-      { name: 'AutoCAD Plant 3D', context: 'Tesla — Manufacturing Engineering (NDA)' },
-      { name: 'DEM / ANSYS simulation', context: 'Tesla — Material Flow Automation (NDA)' },
+      { name: 'AutoCAD Plant 3D', context: 'Tesla, Manufacturing Engineering (NDA)' },
+      { name: 'DEM / ANSYS simulation', context: 'Tesla, Material Flow Automation (NDA)' },
     ],
   },
   {
@@ -68,7 +68,7 @@ export const skillGroups: SkillGroup[] = [
         name: 'Three.js / model-viewer',
         evidence: [{ type: 'project', slug: 'interactive-3d-model' }],
       },
-      { name: 'C# (SQLite, LINQ)', context: 'Tesla — Manufacturing Engineering (NDA)' },
+      { name: 'C# (SQLite, LINQ)', context: 'Tesla, Manufacturing Engineering (NDA)' },
     ],
   },
   {
