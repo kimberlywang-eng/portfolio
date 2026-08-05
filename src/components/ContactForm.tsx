@@ -53,26 +53,25 @@ export default function ContactForm() {
       </div>
       <div className="grid md:grid-cols-2 gap-5">
         <Field label="Company / Organization" name="company" />
-        <SelectField
-          label="Reason for reaching out"
-          name="reason"
-          options={[
-            'Recruiting / job opportunity',
-            'Collaboration',
-            'Business / professional',
-            'Academic / school',
-            'Other',
-          ]}
-        />
-      </div>
-      <div className="grid md:grid-cols-2 gap-5">
-        <SelectField
-          label="Timeline"
-          name="timeline"
-          options={['ASAP', 'Within a month', '1–3 months', 'Just exploring']}
-        />
         <Field label="Role or project title" name="project_title" placeholder="e.g. Senior PM, Data Eng role" />
       </div>
+      <PillSelect
+        label="Reason for reaching out"
+        name="reason"
+        multi
+        options={[
+          'Recruiting / job opportunity',
+          'Collaboration',
+          'Business / professional',
+          'Academic / school',
+          'Other',
+        ]}
+      />
+      <PillSelect
+        label="Timeline"
+        name="timeline"
+        options={['ASAP', 'Within a month', '1–3 months', 'Just exploring']}
+      />
       <div>
         <label className="block text-sm text-ink-muted mb-1.5" htmlFor="message">
           Message
@@ -149,35 +148,61 @@ function Field({
   );
 }
 
-function SelectField({
+// Pill-button select — same visual language as the case-study category filter
+// (ProjectGrid). Replaces a native <select> dropdown: every option is visible
+// at a glance and it's a single tap/click instead of open-scroll-pick.
+// `multi` allows picking more than one (e.g. reaching out for more than one
+// reason at once); otherwise picking a new option swaps out the old one.
+function PillSelect({
   label,
   name,
   options,
+  multi = false,
 }: {
   label: string;
   name: string;
   options: string[];
+  multi?: boolean;
 }) {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  function toggle(opt: string) {
+    setSelected((prev) => {
+      if (multi) {
+        return prev.includes(opt) ? prev.filter((o) => o !== opt) : [...prev, opt];
+      }
+      return prev[0] === opt ? [] : [opt];
+    });
+  }
+
   return (
     <div>
-      <label className="block text-sm text-ink-muted mb-1.5" htmlFor={name}>
+      <p className="block text-sm text-ink-muted mb-1.5">
         {label}
-      </label>
-      <select
-        id={name}
-        name={name}
-        defaultValue=""
-        className="w-full rounded-lg bg-bg-soft border border-border px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-accent/50 transition-colors"
-      >
-        <option value="" disabled>
-          Select one
-        </option>
-        {options.map((opt) => (
-          <option key={opt} value={opt}>
-            {opt}
-          </option>
-        ))}
-      </select>
+        {multi && <span className="text-ink-faint"> — pick as many as apply</span>}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {options.map((opt) => {
+          const active = selected.includes(opt);
+          return (
+            <button
+              key={opt}
+              type="button"
+              data-cursor-hover
+              onClick={() => toggle(opt)}
+              aria-pressed={active}
+              className={`rounded-full border px-3.5 py-1.5 text-xs transition-colors ${
+                active
+                  ? 'bg-accent/15 border-accent/50 text-accent'
+                  : 'border-border text-ink-muted hover:text-ink hover:border-ink-faint'
+              }`}
+            >
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+      <input type="hidden" name={name} value={selected.join(', ')} />
     </div>
   );
 }

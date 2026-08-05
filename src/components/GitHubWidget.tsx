@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import { Star, GitFork, Github, ExternalLink } from 'lucide-react';
 import { site } from '@/data/site';
 
@@ -20,37 +17,32 @@ interface UserStats {
   following: number;
 }
 
-export default function GitHubWidget() {
-  const [repos, setRepos] = useState<Repo[] | null>(null);
-  const [user, setUser] = useState<UserStats | null>(null);
-  const [error, setError] = useState(false);
+// Fetched on the server (build time, then revalidated hourly) instead of from
+// the browser after hydration — visitors get the real data immediately
+// instead of a loading skeleton, this only calls the GitHub API once per
+// hour total instead of once per visitor, and it can't fail visibly after
+// the page has already painted.
+async function getGitHubData(): Promise<
+  { user: UserStats; repos: Repo[]; error: false } | { user: null; repos: null; error: true }
+> {
+  try {
+    const [userRes, repoRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${site.githubUser}`, { next: { revalidate: 3600 } }),
+      fetch(`https://api.github.com/users/${site.githubUser}/repos?sort=updated&per_page=6`, {
+        next: { revalidate: 3600 },
+      }),
+    ]);
+    if (!userRes.ok || !repoRes.ok) throw new Error('GitHub API request failed');
+    const user = (await userRes.json()) as UserStats;
+    const repos = (await repoRes.json()) as Repo[];
+    return { user, repos, error: false };
+  } catch {
+    return { user: null, repos: null, error: true };
+  }
+}
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      try {
-        const [userRes, repoRes] = await Promise.all([
-          fetch(`https://api.github.com/users/${site.githubUser}`),
-          fetch(`https://api.github.com/users/${site.githubUser}/repos?sort=updated&per_page=6`),
-        ]);
-        if (!userRes.ok || !repoRes.ok) throw new Error('GitHub API request failed');
-        const userData = await userRes.json();
-        const repoData = await repoRes.json();
-        if (!cancelled) {
-          setUser(userData);
-          setRepos(repoData);
-        }
-      } catch {
-        if (!cancelled) setError(true);
-      }
-    }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+export default async function GitHubWidget() {
+  const { user, repos, error } = await getGitHubData();
 
   return (
     <div className="card-surface p-6">
@@ -78,14 +70,6 @@ export default function GitHubWidget() {
           </a>
           .
         </p>
-      )}
-
-      {!error && !repos && (
-        <div className="space-y-3 animate-pulse">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="h-14 rounded-lg bg-ink/5" />
-          ))}
-        </div>
       )}
 
       {user && (

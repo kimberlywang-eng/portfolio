@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Download } from 'lucide-react';
 import CodeTypewriter from './CodeTypewriter';
 import { site } from '@/data/site';
 
@@ -42,6 +42,9 @@ export default function Hero() {
           <p className="mt-6 text-ink-muted text-base md:text-lg leading-relaxed max-w-lg">
             {site.tagline}
           </p>
+          <p className="mt-3 inline-flex items-center rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs text-accent">
+            {site.openTo}
+          </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/projects"
@@ -56,6 +59,16 @@ export default function Hero() {
             >
               Get in touch
             </Link>
+            {site.resumeHref && (
+              <a
+                href={site.resumeHref}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-accent transition-colors"
+              >
+                <Download size={14} /> Resume
+              </a>
+            )}
           </div>
         </motion.div>
 

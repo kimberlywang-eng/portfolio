@@ -136,6 +136,16 @@ body {
   backdrop-filter: blur(6px);
 }
 
+/* Skills matrix "+N" pills use <details>/<summary> as a zero-JS dropdown for
+   skills demonstrated in more than one project — this just hides the browser's
+   default disclosure arrow so it reads as a plain pill button. */
+.skill-details > summary {
+  list-style: none;
+}
+.skill-details > summary::-webkit-details-marker {
+  display: none;
+}
+
 .prose-content h2 {
   @apply text-xl md:text-2xl font-semibold text-ink mt-10 mb-4;
 }
